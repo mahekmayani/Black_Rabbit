@@ -1,0 +1,24 @@
+.navbar-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:  #000000;
+    color: white;
+    padding: 10px;
+  }
+  
+  .navbar-form p {
+    /* color: blueviolet; */
+    cursor: pointer;
+    padding: 5px 16px;
+    margin: 0;
+    float: right;
+    
+    transition: background-color 0.3s;
+  }
+  
+  /* Add hover effect */
+  .navbar-form p:hover {
+    background-color: #d3d3d3;
+    color: #000000;
+  }

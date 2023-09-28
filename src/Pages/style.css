@@ -1,0 +1,11 @@
+*{
+    box-sizing: border-box;
+}
+form {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Sans-Serif";
+    display: flex;
+    background-color: cornflowerblue;
+  }
