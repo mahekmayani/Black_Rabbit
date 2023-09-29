@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAward, faGamepad, faHouse, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faAward, faGamepad, faHouse, faPhone, faRightFromBracket, faUpload } from "@fortawesome/free-solid-svg-icons";
 
 export const SidebarData = [
   {
@@ -12,7 +12,7 @@ export const SidebarData = [
   {
     title: "AddGame",
     path: "/addGame",
-    icon: <FontAwesomeIcon icon={faHouse} />,
+    icon: <FontAwesomeIcon icon={faUpload} />,
     cName: "nav-text"
   },
   {
@@ -32,5 +32,13 @@ export const SidebarData = [
     path: "/contactUs",
     icon: <FontAwesomeIcon icon={faPhone} />,
     cName: "nav-text"
+  },
+  {
+    title: "LogOut",
+    path: "/",
+    icon: <FontAwesomeIcon icon={faRightFromBracket}/>,
+    cName: "nav-text"
   }
 ];
+
+

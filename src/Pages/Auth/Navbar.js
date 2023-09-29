@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <>
       <div className='navbar-form'>
-        <p onClick={LogOutClick}>Log Out</p>     
+        <p className="ml-auto" onClick={LogOutClick}>Log Out</p>     
      </div>
     </>
   );

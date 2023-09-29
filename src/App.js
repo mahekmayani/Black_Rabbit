@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 // import Navbar from './Pages/Auth/Navbar';
 import Login from './Pages/Auth/Login';
 import Registration from './Pages/Auth/Registration';
@@ -13,11 +13,24 @@ import Navbar from './Pages/Auth/Navbar';
 
 function App() {
   const getPath = (window.location.pathname);
+  const location = useLocation();
+
+  console.log(location);
+
+  const sideBarShowPath = ['/','/registration','/forgot']
   // console.log("get",get);
   return (
     <>
-      <Navbar />
-      <Sidebar />
+
+    {
+      !sideBarShowPath.includes(location.pathname) && (
+        <>
+        <Navbar />
+        <Sidebar />
+        </>
+      )
+    }
+     
 
       <Routes>
         <Route path="/" element={<Login />} />
