@@ -6,13 +6,15 @@ function Navbar() {
 
     const navigate = useNavigate();
 
-    const LogOutClick = () => {
-        navigate("/");
+  
+
+    const ProfileClick = () => {
+        navigate("/profile");
     }
   return (
     <>
       <div className='navbar-form'>
-        <p className="ml-auto" onClick={LogOutClick}>Log Out</p>     
+        <p className="ml-auto" onClick={ProfileClick}>Profile</p>     
      </div>
     </>
   );

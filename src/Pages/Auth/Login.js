@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import '../Auth/Css/Login.css';
+import '../Auth/Css/Login.css';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,7 +13,7 @@ const Login = () => {
   });
 
   const [error, setError] = useState({
-    email: '',
+    Email: '',
     Password: ''
   });
 
@@ -32,11 +32,8 @@ const Login = () => {
     setPasswordVisible(!passwordVisible);
   };
 
-  const [isLogin, setIsLogin] = useState(true); // Initially, show the login form
 
-  const toggleForm = () => {
-    setIsLogin(!isLogin); // Toggle between login and register forms
-  };
+ 
 
   const navigate = useNavigate();
 
@@ -46,9 +43,9 @@ const Login = () => {
 
     const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!lgnFormData.Email) {
-      error.email = "Please Email Required"
+      error.Email = "Please Email Required"
     } else if (!emailRegex.test(lgnFormData.Email)) {
-      error.email = "Invalid Email"
+      error.Email = "Invalid Email"
     }
 
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,10})/;
@@ -58,7 +55,7 @@ const Login = () => {
       error.Password = "Invalid Password"
     }
 
-    if (error.email || error.Password) {
+    if (error.Email || error.Password) {
       setError(error)
       return;
     }
@@ -69,7 +66,7 @@ const Login = () => {
       password: lgnFormData.Password
     }
 
-    axios.post("https://node-project-oshu.onrender.com/api/v1/auth/login", body)
+    axios.post("http://localhost:3000/api/v1/auth/login", body)
       .then((res) => {
         // console.log("res",res);
         if (res.status === 200) {
@@ -77,7 +74,7 @@ const Login = () => {
             Email: '',
             Password: '',
           })
-          
+
           localStorage.setItem("token", res.data.token.access.token)
           localStorage.setItem("userName", res.data.user.firstName)
 
@@ -102,6 +99,7 @@ const Login = () => {
 
       <div className='container mt-5 mr-0' >
         <div className='col-md-8'>
+          {/* <div className='login-form'> */}
           <form className='border border-primary p-4'>
             <h4 className='text-center mb-4'>
               Login
@@ -119,16 +117,17 @@ const Login = () => {
                   onChange={(e) => {
                     setError({
                       ...error,
-                      email: ''
+                      Email: ''
                     })
                     handleChange(e)
                   }}
                 />
                 {
-                  error.Password && <p style={{ color: 'red' }}>{error.Password}</p>
+                  error.Email && <p> {error.Email} </p>
                 }
+
               </div>
-              <div className='form-group col-md-6'>
+              <div className='form-group col-md-6 mb-0'>
                 <div className='input-group'>
                   <input
                     type={passwordVisible ? "text" : "password"}
@@ -146,9 +145,7 @@ const Login = () => {
                     }}
                     onKeyPress={(e) => onKeyBtn(e)}
                   />
-                  {
-                    error.Password && <p style={{ color: 'red' }}>{error.Password}</p>
-                  }
+                  
 
                   <div className='input-group-append'>
                     <span
@@ -164,16 +161,21 @@ const Login = () => {
                     </span>
                   </div>
                 </div>
+                {
+                    error.Password && <p>{error.Password}</p>
+                  }
               </div>
             </div>
 
 
-
-            <p onClick={SignIn} className='btn btn-primary' >SingIn</p>
+            <div className='login-form'>
+              <p onClick={SignIn} className='btn btn-primary'>SingIn</p>
+            </div>
             <p onClick={() => navigate("/registration")} className='mt-3'>
               Don't have an account? Register here
             </p>
           </form>
+          {/* </div> */}
         </div>
         {/* </div> */}
       </div>

@@ -10,6 +10,8 @@ import Game from './Pages/Auth/Game';
 import Membership from './Pages/Auth/Membership';
 import Sidebar from './Pages/Auth/Sidebar';
 import Navbar from './Pages/Auth/Navbar';
+import Profile from './Pages/Auth/Profile';
+import AddGameTable from './Pages/Auth/AddGameTable';
 
 function App() {
   const getPath = (window.location.pathname);
@@ -41,6 +43,8 @@ function App() {
         <Route path="/membership" element={<Membership />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/contactUs" element={<ContactUs />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/addgametable" element={<AddGameTable />} />
         
       </Routes>
     </>

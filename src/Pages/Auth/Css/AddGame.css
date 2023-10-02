@@ -86,11 +86,11 @@ width:400px; */
     box-sizing: 1px;
     border-radius: 20px;
     
-}
+}*/
 
-.game-form p{
+.form-row p{
     color: red;
-    margin-top: -7px;
+    margin-top: 0px;
     margin-bottom: 0px;
     font-size: small;
-} */
+} 

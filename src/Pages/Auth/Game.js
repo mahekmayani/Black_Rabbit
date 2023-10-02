@@ -1,29 +1,44 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import image from "../Auth/images/first_activity_image.png";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { render } from "react-dom";
 
-const data = [
-    { id: 1, title: "Card 1", description: "Description 1" },
-    { id: 2, title: "Card 2", description: "Description 2" },
-    { id: 3, title: "Card 3", description: "Description 3" },
-    { id: 3, title: "Card 3", description: "Description 3" },
-    { id: 3, title: "Card 3", description: "Description 3" },
-    { id: 3, title: "Card 3", description: "Description 3" },
-    // Add more data as needed
-  ];
-const Game = () => {
+
+  const Game = () => {
+    const [gameData, setGameData] = useState([]);
+    console.log("gameData",gameData);
+
+
+   const navigate = useNavigate()
+   
+   const getGameDetails = () => {
+        // axios.get("http://localhost:3000/api/v1/games/get", form_data)
+        axios.get("http://localhost:3000/api/v1/games/get")
+        .then((res) =>{
+          // console.log("res.data",res.data);
+          setGameData(res.data)
+          
+        
+            })
+      }
+      
+      useEffect(()=>{
+        getGameDetails()
+      },[])
   return (
     <div className="container">
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {data.map((item) => (
-          <div className='card' style={{ width: "16rem",  margin: "50px", marginLeft:"auto"}} key={item.id}>
-            <img className='card-img-top' src={image} alt='Card image cap' />
+        {gameData.map((item) => (
+          <div className='card' style={{ width: "16rem",  margin: "1%", marginLeft:"7.5%"}} key={item.id}>
+            <img className='card-img-top' src={`http://localhost:3000${item.image}`} alt='Card image cap' />
             <div className='card-body'>
-              <h5 className='card-title'>{item.title}</h5>
+              <h5 className='card-title'>{item.name}</h5>
               <p className='card-text'>{item.description}</p>
-              <button type='button' className='btn btn-primary'>
-                Primary
-              </button>
+              <p className='card-text'>{item.price}</p>
+              
+              <p className='btn btn-primary'>Game Details</p>
             </div>
           </div>
         ))}
@@ -31,5 +46,7 @@ const Game = () => {
     </div>
   );
 };
+    
+  
 
 export default Game;

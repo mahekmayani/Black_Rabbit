@@ -1,4 +1,4 @@
-.Login-form h1{
+/* .Login-form h1{
     text-shadow: 5px;
     color: antiquewhite;
 }
@@ -43,14 +43,26 @@
     box-sizing: 1px;
     border-radius: 20px;
     
-}
+}*/
 
-.Login-form p {
+.form-row p {
     color: red;
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: small;
+   
 }
 
 
+ 
 
+ /* .login-form button {
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan;
+    background-color: cyan;
+ }
+ .login-form button:hover {
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px cyan,
+    0 0 100px cyan, 0 0 200px cyan;
+ } */

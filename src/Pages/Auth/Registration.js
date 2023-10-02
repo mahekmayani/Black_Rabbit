@@ -107,7 +107,7 @@ const Registration = () => {
       password: regFormData.Password,
     }
 
-    axios.post("https://node-project-oshu.onrender.com/api/v1/auth/register", body)
+    axios.post("http://localhost:3000/api/v1/auth/register", body)
       .then((res) => {
         if (res.status === 201) {
           setRegFormData({
@@ -119,9 +119,11 @@ const Registration = () => {
             ConfirmPassword: '',
           })
         }
-        navigate("/")
-
-
+        toast("Registration Successfully")
+        setTimeout(()=>{
+          navigate("/")
+        },2000)
+        
       }).catch((error) => {
         console.log("error", error);
         if (error.response.data.message === "User already registered") {
@@ -147,7 +149,7 @@ const Registration = () => {
                 Registration
               </h4>
               <div className="form-row">
-                <div className="form-group col-md-6">
+                <div className="form-group col-md-6 mb-3">
                   <input
                     type="text"
                     className="form-control"
@@ -164,12 +166,12 @@ const Registration = () => {
                     }}
                   />
                   {
-                    error.FirstName && <p style={{color : "red"}}>{error.FirstName}</p>
+                    error.FirstName && <p>{error.FirstName}</p>
                   }
 
                 </div>
 
-                <div className="form-group col-md-6">
+                <div className="form-group col-md-6 mb-3">
                   <input
                     type="text"
                     name='LastName'
@@ -186,12 +188,12 @@ const Registration = () => {
                     }}
                   />
                   {
-                    error.LastName && <p style={{color : "red"}}>{error.LastName}</p>
+                    error.LastName && <p>{error.LastName}</p>
                   }
                 </div>
               </div>
               <div className='form-row'>
-                <div className='form-group col-md-6'>
+                <div className='form-group col-md-6 mb-3'>
                   <input
                     type='email'
                     name='Email'
@@ -207,10 +209,10 @@ const Registration = () => {
                     }}
                   />
                   {
-                    error.Email && <p style={{color : "red"}}>{error.Email}</p>
+                    error.Email && <p>{error.Email}</p>
                   }
                 </div>
-                <div className='form-group col-md-6'>
+                <div className='form-group col-md-6 mb-3'>
                   <div className='input-group'>
                     <input
                       type={passwordVisible ? "text" : "password"}
@@ -243,12 +245,12 @@ const Registration = () => {
                     </div>
                   </div>
                 {
-                      error.Password && <p style={{color : "red"}}>{error.Password}</p>
+                      error.Password && <p>{error.Password}</p>
                     }
                 </div>
               </div>
               <div className="form-row">
-                <div className="form-group col-md-6">
+                <div className="form-group col-md-6 mb-3">
                   <input
                     type="mobile"
                     name='Mobile'
@@ -266,7 +268,7 @@ const Registration = () => {
                     onKeyPress={(e) => onKeyBtn(e)}
                   />
                   {
-                    error.Mobile && <p style={{color : "red"}}>{error.Mobile}</p>
+                    error.Mobile && <p>{error.Mobile}</p>
                   }
                 </div>
               </div>
@@ -276,7 +278,6 @@ const Registration = () => {
                 <div className='form-check'>
                   <input
                     className='form-check-input'
-                    
                     type='checkbox'
                     id='gridCheck'
                   />
@@ -287,7 +288,7 @@ const Registration = () => {
               </div>
 
               <p onClick={SignUp} className='btn btn-primary' >SingUp</p>
-              <p className='mt-3' style={{ color: "white" }}>
+              <p className='mt-3' style={{ color: "black" }}>
                 Already have an account?
                
                 <p onClick={() => navigate("/")}><u>Login</u></p>

@@ -1,91 +1,29 @@
-/* .contact-page{
-    width: 68%;
-    height: 550px;
-    display: flex;
-    margin-top: 20px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+.contact-form input:hover{
+    color: rgb(249, 249, 249);
+    background-color: rgb(255, 30, 0);
+    
 }
-.contact-page2{
-    width: 800px;
-    height: 450px;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.Input-Form1{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 10px;
-    margin-right: auto;
-    margin-top: 30px;
-}
-.Input-Form2{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-}
-
-
-
-.contact-form2 input{
-    width: 200px;
-    height: 40px;
-    margin-left: 90px;
-    margin-top: 30px;
-    text-align: center;
-    background-color: rgb(11, 94, 129);
+.contact-form input{
+    background-color: rgb(6, 44, 111);
+    /* background-color: rgb(13, 53, 81); */
     color: white;
 }
-
-.contact-form2 input:hover{
-background-color: crimson;
-}
-
-.contact-form2 h2{
-color: #ffffff;
-}
-
-/* .Text-form{
-    width: 100%;
-    margin-top: 10px;
-    margin-left: 10px;
-} */
-
-/* .contact-form button{
-    width: 80px;
-    height: 30px;
-    color: rgb(1, 88, 125);
-    background:  rgb(255, 255, 255);
-    margin-top: 20px;
-    margin-right: 546px;
-    border: 2px solid rgb(1, 88, 125);
-}
-
-.contact-form button:hover{
+.contact-form1 button:hover{
     color: rgb(255, 255, 255);
     background-color: rgb(1, 88, 125);
     border: 2px solid rgb(255, 255, 255);
-} */
+}
 
-/* .contact-form{
-    margin-right: auto;
-    margin-left: auto;
-    width: 60%;
-    
-} */
-/* .contact-form h2{
-    margin-right: 420px;
-    
-} */
-/* .Contact-Page-2 {
-background-color: rgb(0, 76, 109);
-width: 30%;
-} */ 
+.contact-form1 button{
+   
+    color: rgb(1, 88, 125);
+    background:  rgb(255, 255, 255);
+    border: 2px solid rgb(1, 88, 125);
+}
+
+.form-row p{
+    color: red;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: small;
+} 
