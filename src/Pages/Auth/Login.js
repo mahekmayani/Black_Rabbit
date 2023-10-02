@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../Auth/Css/Login.css';
-import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import "./Css/Login.css";
+import Registration from "./Registration";
+import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const Login = () => {
   const [lgnFormData, setLgnFormData] = useState({
@@ -17,6 +18,10 @@ const Login = () => {
     Password: ''
   });
 
+  const toggleForm = () => {
+    // setIsLogin(!isLogin);
+    navigate("/registration");
+  };
   const handleChange = (e) => {
     // console.log("lgnFormData", e.target.value);
     setLgnFormData({
@@ -31,9 +36,6 @@ const Login = () => {
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
-
-
- 
 
   const navigate = useNavigate();
 
@@ -96,18 +98,14 @@ const Login = () => {
 
   return (
     <>
-
-      <div className='container mt-5 mr-0' >
-        <div className='col-md-8'>
-          {/* <div className='login-form'> */}
-          <form className='border border-primary p-4'>
-            <h4 className='text-center mb-4'>
-              Login
-            </h4>
-            <div className='form-row'>
-              <div className='form-group col-md-6'>
-
-                <input
+    {/* {isLogin ?  */}
+    <div className='background-image'>
+        <div className='d-flex justify-content-end align-items-center' style={{ minHeight: "100vh" }}>
+          <form className='border border-primary p-4 mr-4' style={{ width: '25%'}}>
+            <h4 className='text-center mb-4 box-shadow' style={{textShadow: '2px 2px 5px silver', color:'#E238EC'}}>Login</h4>
+            <div className='form-group custom-input' style={{width: '95%'}}>
+              <label htmlFor='inputEmail4'>Email</label>
+              <input
                   type='email'
                   name='Email'
                   className='form-control'
@@ -123,13 +121,14 @@ const Login = () => {
                   }}
                 />
                 {
-                  error.Email && <p> {error.Email} </p>
+                  error.Email && <p className="error-msg"> {error.Email} </p>
                 }
 
-              </div>
-              <div className='form-group col-md-6 mb-0'>
-                <div className='input-group'>
-                  <input
+            </div>
+            <div className='form-group custom-input'>
+              <label htmlFor='inputPassword4'>Password</label>
+              <div className='input-group'>
+              <input
                     type={passwordVisible ? "text" : "password"}
                     name='Password'
                     className='form-control'
@@ -146,40 +145,47 @@ const Login = () => {
                     onKeyPress={(e) => onKeyBtn(e)}
                   />
                   
-
-                  <div className='input-group-append'>
-                    <span
-                      className='input-group-text'
-                      onClick={togglePasswordVisibility}
-                      style={{ cursor: "pointer" }}
-                    >
-                      {passwordVisible ? (
-                        <FontAwesomeIcon icon={faEye} />// Eye slash icon for showinh password
-                      ) : (
-                        <FontAwesomeIcon icon={faEyeSlash} /> // Eye icon for hide password
-                      )}
-                    </span>
-                  </div>
+                <div className='input-group-append' style={{paddingTop: '4px', marginRight: 'auto'}}>
+                  <span
+                    className='input-group-text'
+                    onClick={togglePasswordVisibility}
+                    style={{ cursor: "pointer" }}
+                  >
+                    {passwordVisible ? (
+                      <FontAwesomeIcon icon={faEye} />
+                    ) : (
+                      <FontAwesomeIcon icon={faEyeSlash} />
+                    )}
+                  </span>
                 </div>
-                {
-                    error.Password && <p>{error.Password}</p>
-                  }
               </div>
+              {
+                    error.Password && <p className="error-msg">{error.Password}</p>
+                  }
             </div>
 
-
-            <div className='login-form'>
-              <p onClick={SignIn} className='btn btn-primary'>SingIn</p>
-            </div>
-            <p onClick={() => navigate("/registration")} className='mt-3'>
-              Don't have an account? Register here
+            {/* <button type='submit' className='button button2'>
+              Sign In
+            </button> */}
+          <p className="button" style={{verticalAlign: "middle"}}><span className="sign-in-btn" onClick={SignIn}>Sign In</span>
+            </p>
+            <p className='mt-3' style={{color: "#FFF"}}>
+              Don't have an account?{" "}
+              <span
+                className='register-link'
+                onClick={toggleForm}
+                style={{ cursor: "pointer" }}
+              >
+                Register
+              </span>
             </p>
           </form>
-          {/* </div> */}
-        </div>
-        {/* </div> */}
+          </div>
       </div>
-    </>
+      {/* : 
+      <Registration />
+} */}
+</>
   );
 };
 

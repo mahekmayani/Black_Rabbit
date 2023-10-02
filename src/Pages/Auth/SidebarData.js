@@ -11,7 +11,7 @@ export const SidebarData = [
   },
   {
     title: "AddGame",
-    path: "/addGame",
+    path: "/addGameTable",
     icon: <FontAwesomeIcon icon={faUpload} />,
     cName: "nav-text"
   },

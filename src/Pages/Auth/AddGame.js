@@ -25,11 +25,11 @@ const AddGame = () => {
         image: ''
     });
 
-    useEffect(()=>{
-        if(location?.state){
+    useEffect(() => {
+        if (location?.state) {
             setAddGame(location?.state)
-    }
-    },[location])
+        }
+    }, [location])
 
 
     const [error, setError] = useState({
@@ -54,6 +54,9 @@ const AddGame = () => {
             ...addGame,
             image: e.target.files[0]
         })
+    }
+    const toastify = () => {
+        console.log("error");
     }
 
     const AddGame = () => {
@@ -88,7 +91,7 @@ const AddGame = () => {
 
 
         const form_data = new FormData();
-        if(location?.state){
+        if (location?.state) {
             form_data.append("id", addGame?.id)
         }
 
@@ -97,40 +100,45 @@ const AddGame = () => {
         form_data.append("price", addGame?.price)
         form_data.append("category", addGame?.category)
         form_data.append("image", addGame?.image)
-        
+
         // console.log("hello");
 
-        if(location?.state){
+        if (location?.state) {
+            console.log("location?.state", location?.state);
+            axios.put(`http://localhost:3000/api/v1/games/update/${location?.state?.id}`, form_data)
+                .then((res) => {
+                    // console.log("update", res);
 
-            axios.post("", form_data)
-            .then((res) => {
-            
-                navigate("/game")
-            })
-        }else{
-        axios.post("http://localhost:3000/api/v1/games/create", form_data)
-            .then((res) => {
-                // console.log("res",res);
-                if (res.status === 201) {
-                    setAddGame({
-                        description: '',
-                        name: '',
-                        price: '',
-                        category: '',
-                        image: ''
-                    })
-                }
-                navigate("/game")
-            })
+                    toast("Update Successfully");
+                    setTimeout(() => {
+                      navigate("/addGameTable");
+                    }, 2000);
+                })
+
+        } else {
+            axios.post("http://localhost:3000/api/v1/games/create", form_data)
+                .then((res) => {
+                    // console.log("res",res);
+                    if (res.status == 201) {
+                        setAddGame({
+                            description: '',
+                            name: '',
+                            price: '',
+                            category: '',
+                            image: ''
+                        })
+                    }
+                    navigate("/game")
+                })
+        }
     }
-}
 
     return (
         <>
             <div className="contaiter mt-3 mr-0 ml-0">
                 <div className="row justify-content-center mr-0">
                     <div className="col-md-6">
-                        <form className="p-4"  style={{boxShadow:"0 8px 16px 0 rgba(0,0,0,0.2)" ,height:"120%"}}>
+                        <form className="p-4" style={{ boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)", height: "120%" }}>
                             <h4 className="text-center md-4">
                                 Add Game
                             </h4>
@@ -197,17 +205,17 @@ const AddGame = () => {
                                 </div>
                                 <div className="form-group col-md-6 mb-0">
                                     <label for="inputCategory"></label>
-                                    <select name="category" id="inputCategory" className="form-control" style={{ width: "90%" }}                                         
-                                              value={addGame.category}
-                                            onChange={(e) =>
-                                                handleChange(e)
-                                            }>
-                                            {categoryDropDown &&
-                                                categoryDropDown?.map((x) => (
-                                                    <option value={x.value}>{x.value}</option>
-                                                ))
-                                            }
-                                        </select>
+                                    <select name="category" id="inputCategory" className="form-control" style={{ width: "90%" }}
+                                        value={addGame.category}
+                                        onChange={(e) =>
+                                            handleChange(e)
+                                        }>
+                                        {categoryDropDown &&
+                                            categoryDropDown?.map((x) => (
+                                                <option value={x.value}>{x.value}</option>
+                                            ))
+                                        }
+                                    </select>
                                 </div>
                             </div>
                             <div className="form-row">

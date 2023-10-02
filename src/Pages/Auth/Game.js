@@ -1,6 +1,5 @@
 
 import React, { useEffect, useState } from "react";
-import image from "../Auth/images/first_activity_image.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { render } from "react-dom";

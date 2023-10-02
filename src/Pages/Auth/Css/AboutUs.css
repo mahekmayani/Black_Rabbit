@@ -12,11 +12,12 @@
 
 .About-section{
     padding: 50px;
+    height: 100%;
     text-align: center;
     background-color: #474e5d;
     color: white;
 }
-
+/* 
 .column{
     float: left;
     width: 30.3%;
@@ -24,16 +25,35 @@
     padding: 0 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
+} */
+
+.about-page img{
+    height: 500px;
+    width: 25vh;
+    /* margin-left: 20px; */
+}
+.about-page2 img{
+    height: 300px;
+    /* margin-left: 170vh; */
+}
+.about-page img{
+    height: 500px;
+    width: 35vh;
+    /* margin-left: 20px; */
+}
+.about-page2 img{
+    height: 300px;
+    /* margin-left: 170vh; */
 }
 
-.container{
-    padding: 0 16px;
+
+.about-content p{
+padding: 20px 70px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.container::after, .row::after{
-    clear: both;
-    display: table;
-}
 
 .title{
     color: gray;

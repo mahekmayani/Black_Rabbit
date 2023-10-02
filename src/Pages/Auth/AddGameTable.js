@@ -5,22 +5,6 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { useNavigate } from "react-router-dom";
 import AddGame from "./AddGame";
 
-
-
-const rows = [
-    { id: 1, description: 'Snow', name: 'Jon', price: 35, category: 'c', Image: 'Image' },
-    { id: 2, description: 'Lannister', name: 'Cersei', price: 42, category: 'c++', Image: 'Image' },
-    { id: 3, description: 'Lannister', name: 'Jaime', price: 45, category: 'java', Image: 'Image' },
-    { id: 4, description: 'Stark', name: 'Arya', price: 16, category: 'asp.net', Image: 'Image' },
-    { id: 5, description: 'Targaryen', name: 'Daenerys', price: null, category: 'react', Image: 'Image' },
-    { id: 6, description: 'Melisandre', name: null, price: 150, category: 'c', Image: 'Image' },
-    { id: 7, description: 'Clifford', name: 'Ferrara', price: 44, category: 'c++', Image: 'Image' },
-    { id: 8, description: 'Frances', name: 'Rossini', price: 36, category: 'java', Image: 'Image' },
-    { id: 9, description: 'Roxie', name: 'Harvey', price: 65, category: 'asp.net', Image: 'Image' },
-];
-
-
-
 // toast.configure();
 
 const categoryDropDown = [
@@ -30,37 +14,41 @@ const categoryDropDown = [
     { label: "asp.net", value: "asp.net" },
     { label: "react", value: "react" },
 ];
-
 const AddGameTable = () => {
 
-    const [openPopUp, setOpenPopUp] = useState(false)
-    const [deleteRowId , setDeleteRowId] = useState()
-    const [show , setShow] = useState(false)
+    const [gameRecord, setGameRecord] = useState([])
 
-    const handleClose = () => {
-        setShow()
+    const getGameRecord = () => {
+
+        axios.get("http://localhost:3000/api/v1/games/get")
+            .then((res) => {
+                // console.log("res.data",res.data);
+                setGameRecord(res.data)
+            })
     }
-  
-    
+
+   
+
+    useEffect(() => {
+        getGameRecord()
+    }, [])
+
+    const [openPopUp, setOpenPopUp] = useState(false)
+    const [deleteRowId, setDeleteRowId] = useState()
+
+
+
 
     const navigator = useNavigate();
-    
-    const [RowsRecords ,setRowsRecords] = useState({
-        description:'',
-        name:'',
-        price:'',
-        category:'',
-        Image:'',
 
-    })
-    
+
     const columns = [
         { field: 'id', headerName: 'ID', width: 90 },
-        { field: 'description', headerName: 'description', width: 150 },
-        { field: 'name', headerName: 'name', width: 150 },
-        { field: 'price', headerName: 'price', width: 150 },
-        { field: 'category', headerName: 'category', width: 150 },
-        { field: 'Image', headerName: 'Image', width: 150 },
+        { field: 'description', headerName: 'Description', width: 150 },
+        { field: 'name', headerName: 'Name', width: 150 },
+        { field: 'price', headerName: 'Price', width: 150 },
+        { field: 'category', headerName: 'Category', width: 150 },
+        { field: 'image', headerName: 'Image', width: 150 },
         // action
         {
             field: "action",
@@ -92,7 +80,7 @@ const AddGameTable = () => {
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
                             height="20px" width="20px"
-                            className="edit-icon" onClick={(e) => {
+                            className="edit-icon" data-toggle="modal" data-target="#exampleModal" onClick={(e) => {
                                 // console.log("e",params.row.id);
                                 setOpenPopUp(true)
                                 setDeleteRowId(params.row.id)
@@ -109,47 +97,68 @@ const AddGameTable = () => {
     ];
 
     const deleteRecord = (id) => {
-// console.log("mhk",id);
+        // console.log("mhk",id);
     }
 
     return (
         <>
-        <div> 
-          
-            <DataGrid rows={rows} columns={columns} pageSize={5}
-                components={{
-                    Toolbar: () => (
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <GridToolbar />
-                            <div>
-                                <button
-                                    className="btn btn-primary edit-btn"
-                                    style={{ marginRight: '10px', cursor: 'pointer', padding: '10px 10px' }}
-                                    onClick={() => {
-                                        navigator(`/addGame`)
+            <div>
 
-                                    }}
-                                >Add Book</button>
+                <DataGrid rows={gameRecord} columns={columns} pageSize={5}
+                    components={{
+                        Toolbar: () => (
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <GridToolbar />
+                                <div>
+                                    <p
+                                        className="btn btn-primary edit-btn"
+                                        style={{ marginRight: '10px', cursor: 'pointer', padding: '10px 10px' }}
+                                        onClick={() => {
+
+                                            navigator(`/addGame`)
+
+                                        }}
+                                    >Add Game</p>
+                                </div>
+                            </div>
+                        ),
+                    }}
+                    style={{ height: '80vh', width: '100%', padding: '20px' }}
+                    onRowClick={(e) => {
+                        console.log(e)
+                    }}
+                    className="custom-data-grid"
+                />
+                {/* {
+                console.log("helo", rows.id)
+            } */}
+                {openPopUp &&
+                    <div>
+                        {/* hello
+                <button onClick={()=>deleteRecord(deleteRowId)}>Yes</button>
+                <button onClick={()=>{setOpenPopUp(false)}}>No</button> */}
+
+
+
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div> ... </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={() => { setOpenPopUp(false) }}>No</button>
+                                        <button type="button" class="btn btn-primary" onClick={() => deleteRecord(deleteRowId)}>Yes</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    ),
-                }}
-                style={{ height: '80vh', width: '100%', padding: '20px' }}
-                onRowClick={(e) => {
-                    console.log(e)
-                }}
-                className="custom-data-grid"
-            />
-            {
-                console.log("helo", rows.id)
-            }
-            {openPopUp && 
-            <div>
-                hello
-                <button onClick={()=>deleteRecord(deleteRowId)}>Yes</button>
-                <button onClick={()=>{setOpenPopUp(false)}}>No</button>
-            </div>
-            }
+                    </div>
+                }
             </div>
 
         </>
