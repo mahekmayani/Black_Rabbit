@@ -95,7 +95,7 @@
 .button {
   display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-Color: rgb(25, 102, 154);
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -127,6 +127,10 @@
 }
 .button:hover span {
   padding-right: 25px;
+}
+.button:hover {
+  background-Color: rgb(47, 156, 200);
+  color: black;
 }
 
 .button:hover span:after {

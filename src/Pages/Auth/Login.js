@@ -167,7 +167,7 @@ const Login = () => {
             {/* <button type='submit' className='button button2'>
               Sign In
             </button> */}
-          <p className="button" style={{verticalAlign: "middle"}}><span className="sign-in-btn" onClick={SignIn}>Sign In</span>
+          <p className="button" style={{verticalAlign: "middle" }}><span className="BuyNow-btn" onClick={SignIn}>Sign In</span>
             </p>
             <p className='mt-3' style={{color: "#FFF"}}>
               Don't have an account?{" "}

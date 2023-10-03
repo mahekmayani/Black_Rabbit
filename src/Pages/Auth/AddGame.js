@@ -239,7 +239,12 @@ const AddGame = () => {
                                     }
                                 </div>
                             </div>
-                            <p onClick={AddGame} className='btn btn-primary'>Addbooks</p>
+                             <p
+                                        className="button"
+                                        style={{ verticalAlign: "middle" , width:"22%" , backgroundColor:"rgb(33, 87, 124)"}}>
+                                        <span className="add-game-btn"
+                                            onClick={AddGame}>Add Game</span>
+                                    </p>
 
                         </form>
                     </div>

@@ -12,6 +12,7 @@ import Sidebar from './Pages/Auth/Sidebar';
 import Navbar from './Pages/Auth/Navbar';
 import Profile from './Pages/Auth/Profile';
 import AddGameTable from './Pages/Auth/AddGameTable';
+import Footer from './Pages/Auth/Footer';
 
 function App() {
   const getPath = (window.location.pathname);
@@ -45,6 +46,7 @@ function App() {
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/addgametable" element={<AddGameTable />} />
+        <Route path="/footer" element={<Footer />} />
         
       </Routes>
     </>

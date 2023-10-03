@@ -1,6 +1,8 @@
 import React from 'react'
-// import '../Auth/Css/Membership.css'
+import '../Auth/Css/Membership.css';
 import image from '../Auth/images/1111.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const data = [
   { id: 1, title: "Card 1", description: "Description 1" },
@@ -9,71 +11,115 @@ const data = [
 const Membership = () => {
   return (
     <>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }} >
 
-        <div className='membership-form'>
-          <div class="card" style={{ width: "18rem", margin: "50px 0px", marginLeft: "100%" }}>
-            <img class="card-img-top" />
-            <div class="card-body">
-            </div>
-            <ul class="list-group list-group-flush mb-3 text-center">
-              <img src={image}/>
-              <li class="list-group-item">Book Slot For Game</li>
-              <li class="list-group-item">Apply For Our Game Card</li>
-              <li class="list-group-item">Book All Type Of Game</li>
-            </ul>
-            <div className='container mt-3 mb-3 text-center'>
-              <button type='submit' className='btn-btn-primary'><b>Buy Now</b></button>
-            </div>
-          </div>
-        </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap' , marginLeft:"17.5%"}} >
+        <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet' />
+        <link href='' rel='stylesheet' />
 
-        <div>
-          <div class="card" style={{ width: "18rem", margin: "50px", marginLeft: "100%" }}>
-            <img class="card-img-top" />
-            <div class="card-body">
-            </div>
-            <ul class="list-group list-group-flush mb-3 text-center">
-            <img src={image}/>
-              <li class="list-group-item">Book Slot For Game</li>
-              <li class="list-group-item">Apply For Our Game Card</li>
-              <li class="list-group-item">Book All Type Of Game</li>
-            </ul>
-            <div className='container mt-3 mb-3 text-center'>
-              <button type='submit' className='btn-btn-primary'><b>Buy Now</b></button>
-            </div>
+        <script type='text/javascript' src=''></script>
+        <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+        <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+        <script type='text/javascript'></script>
+        <div class="demo">
+          <div class="container">
+            <div class="row">
+              {/* <div class="col-md-3 col-sm-6" style={{width:"40vh"}}>
+                <div class="pricingTable">
+                  <div class="pricingTable-header">
+                    <i class="fa fa-adjust"></i>
+                    <div class="price-value"> $10.00 <span class="month">per month</span> </div>
+                  </div>
+                  <h3 class="heading">Standard</h3>
+                  <div class="pricing-content">
+                    <ul>
+                      <li><b>50GB</b> Disk Space</li>
+                      <li><b>50</b> Email Accounts</li>
+                      <li><b>50GB</b> Monthly Bandwidth</li>
+                      <li><b>10</b> subdomains</li>
+                      <li><b>15</b> Domains</li>
+                    </ul>
+                  </div>
+                  <div class="pricingTable-BuyNow">
+                    <a href="#">Buy Now</a>
+                  </div>
+                </div>
+              </div> */}
 
-          </div>
-        </div>
-
-        <div>
-          <div class="card" style={{ width: "18rem", margin: "50px", marginLeft: "100%" }}>
-            <img class="card-img-top" />
-            <div class="card-body">
-            </div>
-            <ul class="list-group list-group-flush  mb-3 text-center">
-            <img src={image}/>
-              <li class="list-group-item">Book Slot For Game</li>
-              <li class="list-group-item">Apply For Our Game Card</li>
-              <li class="list-group-item">Book All Type Of Game</li>
-            </ul>
-            <div className='form'>
-              <div className='container mt-3 mb-3 text-center'>
-                <button type='submit' className='btn-btn-primary'><b>Buy Now</b></button>
-                <span
-                  style={{ cursor: "pointer", color: "blue" }}>
-                </span>
+              <div class="col-md-3 col-sm-6"  style={{width:"40vh"}}>
+                <div class="pricingTable green">
+                  <div class="pricingTable-header">
+                    <i class="fa fa-briefcase"></i>
+                    <h4>Noob</h4>
+                    <div class="price-value"> $00.00 <span class="month">per month</span> </div>
+                  </div>
+                  <h3 class="heading">Free</h3>
+                  <div class="pricing-content"  style={{paddingTop:"5%"}}>
+                    <ul>
+                      <li><b><FontAwesomeIcon icon={faCheck} beatFade /></b> Book Slot For Game</li>
+                      <div  style={{paddingTop:"10%"}}></div>
+                      <li><b><FontAwesomeIcon icon={faCheck} beatFade /></b> Apply For Our Game Card</li>
+                      <div  style={{paddingTop:"10%"}}></div>
+                      <li><b><FontAwesomeIcon icon={faXmark} beatFade /></b> Book All Type Of Game</li>
+                    </ul>
+                  </div>
+                  <div class="pricingTable-BuyNow">
+                    <a href="#">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 ml-5" style={{width:"40vh"}}>
+                <div class="pricingTable blue">
+                  <div class="pricingTable-header">
+                    <i class="fa fa-diamond"></i>
+                    <h4>ABC</h4>
+                    <div class="price-value"> $199 <span class="month">per month</span> </div>
+                  </div>
+                  <h3 class="heading">Premium</h3>
+                  <div class="pricing-content" style={{paddingTop:"5%"}}>
+                    <ul>
+                    <li><b><FontAwesomeIcon icon={faCheck} beatFade /></b> Book Slot For Game</li>
+                    <div  style={{paddingTop:"10%"}}></div>
+                      <li><b><FontAwesomeIcon icon={faCheck} beatFade /></b> Apply For Our Game Card</li>
+                      <div  style={{paddingTop:"10%"}}></div>
+                      <li><b><FontAwesomeIcon icon={faXmark} beatFade /></b> Book All Type Of Game</li>
+                    </ul>
+                  </div>
+                  <div class="pricingTable-BuyNow">
+                    <a href="#">Buy Now</a>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 ml-5"  style={{width:"40vh"}}>
+                <div class="pricingTable red">
+                  <div class="pricingTable-header">
+                    <i class="fa fa-cube"></i>
+                    <h4>Legend</h4>
+                    <div class="price-value"> $299 <span class="month">per month</span> </div>
+                  </div>
+                  <h3 class="heading">Premium</h3>
+                  <div class="pricing-content" style={{paddingTop:"5%"}}> 
+                    <ul>
+                    <li><b>60GB</b> Book Slot For Game</li>
+                    <div  style={{paddingTop:"10%"}}></div>
+                      <li><b></b> Apply For Our Game Card</li>
+                      <div  style={{paddingTop:"10%"}}></div>
+                      <li><b></b>   Book All Type Of Game</li>
+                    </ul>
+                  </div>
+                  <div class="pricingTable-BuyNow">
+                    <a href="#">Buy Now</a>
+                  </div>
+                </div>
               </div>
             </div>
-
-
           </div>
         </div>
       </div>
-    </>
-  )
+      </>
+      )
 }
 
-export default Membership;
+      export default Membership;
 
 

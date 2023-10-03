@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../Auth/Css/ContactUs.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faWhatsapp, faXmark } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -223,14 +223,18 @@ const ContactUs = () => {
 
                                 <div className="form-row" >
                                     <div className="form-group mt-5">
+                                            <FontAwesomeIcon icon={faEnvelope} size="xl" />
                                         <div className='contact-form'>
                                             <input
                                                 type="email"
                                                 name="email"
                                                 placeholder='email'
                                                 value={"BlackRabbit@gmail.com"}
+
                                                 style={{ height: "40px", marginLeft: "7vh", width:"34vh"}}
                                             />
+                                            <div>
+                                        </div>
                                         </div>
                                     </div>
 
@@ -242,6 +246,7 @@ const ContactUs = () => {
                                                     type="text"
                                                     name="Mobile"
                                                     placeholder='Mobile Number'
+                                                    
                                                     value={"+91 9099975424"}
                                                     style={{ height: "40px", marginLeft: "7vh", width: "34vh" }}
                                                 />
@@ -264,8 +269,8 @@ const ContactUs = () => {
                                         </div>
                                     </div>
                                 </div>
+                                {/* <FontAwesomeIcon icon={faLinkedin} style={{marginTop:"10vh"}}/> */}
                             </div>
-
                         </div>
                     </div>
                 </div>

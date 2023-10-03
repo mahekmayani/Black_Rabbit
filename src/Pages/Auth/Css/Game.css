@@ -1,11 +1,13 @@
-.game-page{
+/* .game-page {
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     margin: 0;
     display: flex;
 }
 
-*,*::before,*::after{
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
@@ -15,14 +17,21 @@
     display: flex;
     /* margin-bottom: 16px; */
     /* margin-left: 500px; */
-    height: 250px;
+    /* height: 250px;
     padding: 0 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
-}
-
+} */
+/* 
 .Game-description p {
     display: flex;
 
-}
+} */ */
 
+.card {
+    width: 16rem;
+    margin: "1%";
+    margin-left: "7.5%";
+    height: "100px";
+
+}

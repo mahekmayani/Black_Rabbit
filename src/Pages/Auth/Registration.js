@@ -280,7 +280,7 @@ const Registration = () => {
           {/* <button className='button' style={{ verticalAlign: "middle" }}>
             <span className='sign-in-btn'>Sign Up</span>
           </button> */}
-            <p className="button" onClick={SignUp} style={{verticalAlign: "middle"}}><span className="sign-in-btn">Sign Up</span>
+            <p className="button" onClick={SignUp} style={{verticalAlign: "middle" }}><span className="sign-in-btn">Sign Up</span>
             </p>
           <p className='mt-3' style={{color: '#fff'}}>
             Don't have an account?{" "}

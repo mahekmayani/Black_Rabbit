@@ -14,7 +14,14 @@
     padding: 50px;
     height: 100%;
     text-align: center;
-    background-color: #474e5d;
+    background-color:  #1e2f54;
+    color: white;
+}
+.About-card{
+    padding: 50px;
+    height: 150%;
+    text-align: center;
+    background-color: #1e2f54;
     color: white;
 }
 /* 

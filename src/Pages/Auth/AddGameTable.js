@@ -27,7 +27,7 @@ const AddGameTable = () => {
             })
     }
 
-   
+
 
     useEffect(() => {
         getGameRecord()
@@ -110,7 +110,7 @@ const AddGameTable = () => {
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                 <GridToolbar />
                                 <div>
-                                    <p
+                                    {/* <p
                                         className="btn btn-primary edit-btn"
                                         style={{ marginRight: '10px', cursor: 'pointer', padding: '10px 10px' }}
                                         onClick={() => {
@@ -118,7 +118,16 @@ const AddGameTable = () => {
                                             navigator(`/addGame`)
 
                                         }}
-                                    >Add Game</p>
+                                    >Add Game</p> */}
+
+                                    <p
+                                        className="button"
+                                        style={{ verticalAlign: "middle" , width:"100%",  backgroundColor:"rgb(33, 87, 124)"}}>
+                                        <span className="add-game-btn"
+                                            onClick={()=>{
+                                                navigator(`/addGame`)
+                                            }}>Add Game</span>
+                                    </p>
                                 </div>
                             </div>
                         ),

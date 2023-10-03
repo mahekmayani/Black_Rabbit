@@ -59,11 +59,17 @@
 }
 
 .form-row p{
-color: red;
-margin-top: 0px;
-margin-bottom: 0px;
-font-size: small;
-
+    background-Color: rgb(25, 102, 154);  
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: small;
+    
 }
+
+.form-row p:hover{
+    background-Color: rgb(47, 156, 200);
+    color: black;
+  }
+
 
 
