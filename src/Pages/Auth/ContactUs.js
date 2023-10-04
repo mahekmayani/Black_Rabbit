@@ -207,7 +207,7 @@ const ContactUs = () => {
                                         </div>
 
                                         <div className="contact-btn mt-5">
-                                            <p1 className="button" style={{ verticalAlign: "middle" }}><span onClick={ContactUsSave}>Submit</span>
+                                            <p1 className="button" style={{ verticalAlign: "middle" }}><span onClick={ContactUsSave}>Contact Me</span>
                                             </p1>
                                         </div>
                                     </div>
@@ -224,7 +224,6 @@ const ContactUs = () => {
 
                                 <div className="form-row" >
                                     <div className="form-group mt-5">
-                                        <FontAwesomeIcon icon={faEnvelope} size="xl" />
                                         <div className='contact-form'>
                                             <input
                                                 type="email"
@@ -232,7 +231,7 @@ const ContactUs = () => {
                                                 placeholder='email'
                                                 value={"BlackRabbit@gmail.com"}
 
-                                                style={{ height: "40px", marginLeft: "7vh", width: "34vh" }}
+                                                style={{ height: "40px", width: "34vh" }}
                                             />
                                             <div>
                                             </div>
@@ -249,7 +248,7 @@ const ContactUs = () => {
                                                     placeholder='Mobile Number'
 
                                                     value={"+91 9099975424"}
-                                                    style={{ height: "40px", marginLeft: "7vh", width: "34vh" }}
+                                                    style={{ height: "40px", width: "34vh" }}
                                                 />
                                             </div>
                                         </div>
@@ -264,7 +263,7 @@ const ContactUs = () => {
                                                     name="BlackRabbit"
                                                     placeholder='BlackRabbit'
                                                     value={"BlackRabbit"}
-                                                    style={{ height: "40px", marginLeft: "7vh", width: "34vh" }}
+                                                    style={{ height: "40px", width: "34vh" }}
                                                 /><br></br><br></br>
                                             </div>
                                         </div>

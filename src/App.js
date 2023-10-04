@@ -6,14 +6,13 @@ import AddGame from './Pages/Auth/AddGame';
 import AboutUs from './Pages/Auth/AboutUs';
 import ContactUs from './Pages/Auth/ContactUs';
 import Forgot from './Pages/Auth/Forgot';
-import Game from './Pages/Auth/Game';
 import Membership from './Pages/Auth/Membership';
 import Sidebar from './Pages/Auth/Sidebar';
 import Navbar from './Pages/Auth/Navbar';
 import Profile from './Pages/Auth/Profile';
 import AddGameTable from './Pages/Auth/AddGameTable';
 import Footer from './Pages/Auth/Footer';
-import Card from './Pages/Auth/Card';
+import Game from './Pages/Auth/Game';
 import GameDetails from './Pages/Auth/GameDetails';
 
 function App() {
@@ -23,6 +22,7 @@ function App() {
   console.log(location);
 
   const sideBarShowPath = ['/','/registration','/forgot']
+  
   // console.log("get",get);
   return (
     <>
@@ -42,13 +42,13 @@ function App() {
         <Route path="/registration" element={<Registration />} />
         <Route path="/forgot" element={<Forgot />} />
         <Route path="/addGame" element={<AddGame />} />
-        {/* <Route path="/game" element={<Game />} /> */}
+        <Route path="/game" element={<Game />} />
         <Route path="/membership" element={<Membership />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/addgametable" element={<AddGameTable />} />
-        <Route path="/card" element={<Card />} />
+        {/* <Route path="/card" element={<Card />} /> */}
         <Route path="/gameDetails" element={<GameDetails />} />
         
       </Routes>

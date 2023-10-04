@@ -5,6 +5,7 @@ import '../Auth/Css/Navbar.css';
 function Navbar() {
 
     const navigate = useNavigate();
+    const userName = localStorage.getItem("userName")
 
   
 

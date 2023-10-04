@@ -45,7 +45,8 @@ const AddGameTable = () => {
 
 
     const columns = [
-        { field: 'id', headerName: 'ID', width: 90 },
+        { field: 'id', headerName: 'ID', width: 90,
+        },
         { field: 'description', headerName: 'Description', width: 150 },
         { field: 'name', headerName: 'Name', width: 150 },
         { field: 'price', headerName: 'Price', width: 150 },
@@ -99,12 +100,17 @@ const AddGameTable = () => {
     ];
 
     const deleteRecord = (id) => {
-        // console.log("mhk",id);
+        axios.delete(`http://localhost:3000/api/v1/games/delete/${id}`)
+        .then((res) => {
+            // console.log("res.data",res.data);
+            toast.success("Deleted successfully");
+            getGameRecord()
+        })
     }
 
     return (
         <>
-            <div>
+            <div style={{width:'81%',padding: '20px', marginLeft: 'auto'}}>
 
                 <DataGrid rows={gameRecord} columns={columns} pageSize={5}
                     components={{
@@ -124,11 +130,11 @@ const AddGameTable = () => {
                                     <div className="add-game-tbl-btn">
                                         <p
                                             className="button"
-                                            style={{ verticalAlign: "middle"}}>
+                                            style={{ verticalAlign: "middle" }}>
                                             <span
-                                            onClick={() => {
-                                                navigator(`/addGame`)
-                                            }}>
+                                                onClick={() => {
+                                                    navigator(`/addGame`)
+                                                }}>
                                                 Add Game</span>
                                         </p>
                                     </div>
@@ -157,15 +163,23 @@ const AddGameTable = () => {
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div> ... </div>
+                                    <div
+                                        style={{
+                                            textAlign: "center",
+                                            fontSize: "18px",
+                                            padding: "10px 20px"
+                                        }}
+                                    >
+                                        Are you sure Delete?
+                                    </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={() => { setOpenPopUp(false) }}>No</button>
-                                        <button type="button" class="btn btn-primary" onClick={() => deleteRecord(deleteRowId)}>Yes</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal" onClick={() => deleteRecord(deleteRowId)}>Yes</button>
                                     </div>
                                 </div>
                             </div>

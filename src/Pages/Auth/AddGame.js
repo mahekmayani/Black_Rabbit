@@ -105,14 +105,11 @@ const AddGame = () => {
 
         if (location?.state) {
             console.log("location?.state", location?.state);
-            axios.put("http://localhost:3000/api/v1/games/update/${location?.state?.id}", form_data)
+            axios.put(`http://localhost:3000/api/v1/games/update/${location?.state?.id}`, form_data)
                 .then((res) => {
                     // console.log("update", res);
-
-                    toast("Update Successfully");
-                    setTimeout(() => {
-                        navigate("/addGameTable");
-                    }, 2000);
+                    // toast.success("Update Successfully");
+                    navigate("/addGameTable");
                 })
 
         } else {
@@ -128,7 +125,7 @@ const AddGame = () => {
                             image: ''
                         })
                     }
-                    navigate("/game")
+                    navigate("/addGameTable")
                 })
         }
     }
@@ -140,7 +137,7 @@ const AddGame = () => {
                     <div className="col-md-8">
                         <div className="content">
                             <form className="  p-4">
-                                <h1 style={{ textAlign: "center" , marginBottom:"5%"}}>Add Game</h1>
+                                <h1 style={{ textAlign: "center" , marginBottom:"5%"}}> {location?.state?.id ? "Update" : "Add" } Game</h1>
                                 <div className="form-row">
                                     <div className="form-group col-md-6 mb-0">
                                         <input
@@ -243,7 +240,7 @@ const AddGame = () => {
                                     </div>
                                 </div>
                                 <div className="add-game-btn mt-5">
-                                    <p1 className="button" style={{ verticalAlign: "middle" }}><span onClick={AddGame}>Add Game</span>
+                                    <p1 className="button" style={{ verticalAlign: "middle" }}><span onClick={AddGame}>{location?.state?.id ? "Update" : "Add" } Game</span>
 
                                     </p1>
                                 </div>

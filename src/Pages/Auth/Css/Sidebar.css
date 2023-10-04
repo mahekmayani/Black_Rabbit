@@ -46,9 +46,9 @@
     align-items: center;
   }
   
-  span {
+  /* span {
     margin-left: 16px;
-  }
+  } */
 
   .nav-text {
     display: flex;

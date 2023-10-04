@@ -125,10 +125,7 @@ const Registration = () => {
             ConfirmPassword: "",
           });
         }
-        toast("Registration Successfully");
-        setTimeout(() => {
-          navigate("/");
-        }, 2000);
+        navigate("/");
       })
       .catch((error) => {
         console.log("error", error);
