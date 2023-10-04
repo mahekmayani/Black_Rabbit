@@ -16,6 +16,7 @@
     "axios": "^1.4.0",
     "fortawesome": "^0.0.1-security",
     "i": "^0.3.7",
+    "moment": "^2.29.4",
     "npm": "^10.1.0",
     "react": "^18.2.0",
     "react-data-grid": "^7.0.0-beta.39",
