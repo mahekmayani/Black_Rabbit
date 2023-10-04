@@ -3,6 +3,7 @@ import '../Auth/Css/AboutUs.css'
 import image from '../Auth/images/06.png';
 import image1 from '../Auth/images/18342a71b9230801b5762f4a12fca57d.jpg';
 import image2 from '../Auth/images/background.jpg';
+import Footer from "./Footer";
 
 
 const VIDEO_PATH = '123.mp4';
@@ -96,6 +97,7 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
+
         </>
     )
 }

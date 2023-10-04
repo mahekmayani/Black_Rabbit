@@ -105,13 +105,13 @@ const AddGame = () => {
 
         if (location?.state) {
             console.log("location?.state", location?.state);
-            axios.put(`http://localhost:3000/api/v1/games/update/${location?.state?.id}`, form_data)
+            axios.put("http://localhost:3000/api/v1/games/update/${location?.state?.id}", form_data)
                 .then((res) => {
                     // console.log("update", res);
 
                     toast("Update Successfully");
                     setTimeout(() => {
-                      navigate("/addGameTable");
+                        navigate("/addGameTable");
                     }, 2000);
                 })
 
@@ -135,125 +135,127 @@ const AddGame = () => {
 
     return (
         <>
-            <div className="contaiter mt-3 mr-0 ml-0">
-                <div className="row justify-content-center mr-0">
-                    <div className="col-md-6">
-                        <form className="p-4" style={{ boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)", height: "120%" }}>
-                            <h4 className="text-center md-4">
-                                Add Game
-                            </h4>
-                            <div className="form-row pt-5">
-                                <div className="form-group col-md-4 mb-0">
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        name="description"
-                                        value={addGame.description}
-                                        placeholder="Description"
-                                        onChange={(e) => {
-                                            setError({
-                                                ...error,
-                                                description: ''
-                                            })
-                                            handleChange(e)
-                                        }}
-                                    />
-                                    {
-                                        error.description && <p>{error.description}</p>
-                                    }
-                                </div>
-                                <div className="form-group col-md-4 mb-0">
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        name="name"
-                                        value={addGame.name}
-                                        placeholder="Name"
-                                        onChange={(e) => {
-                                            setError({
-                                                ...error,
-                                                name: ''
-                                            })
-                                            handleChange(e)
-                                        }}
-                                    />
-                                    {
-                                        error.name && <p>{error.name}</p>
-                                    }
-                                </div>
-                            </div>
-                            <div className="form-row">
-                                <div className="form-group col-md-4 mb-0">
-                                    <label for="inputPrice"></label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        name="price"
-                                        value={addGame.price}
-                                        placeholder="Price"
-                                        onChange={(e) => {
-                                            setError({
-                                                ...error,
-                                                price: ''
-                                            })
-                                            handleChange(e)
-                                        }}
-                                    />
-                                    {
-                                        error.price && <p>{error.price}</p>
-                                    }
-                                </div>
-                                <div className="form-group col-md-6 mb-0">
-                                    <label for="inputCategory"></label>
-                                    <select name="category" id="inputCategory" className="form-control" style={{ width: "90%" }}
-                                        value={addGame.category}
-                                        onChange={(e) =>
-                                            handleChange(e)
-                                        }>
-                                        {categoryDropDown &&
-                                            categoryDropDown?.map((x) => (
-                                                <option value={x.value}>{x.value}</option>
-                                            ))
+            <div className="container mt-1">
+                <div className="row justify-content-center">
+                    <div className="col-md-8">
+                        <div className="content">
+                            <form className="  p-4">
+                                <h1 style={{ textAlign: "center" , marginBottom:"5%"}}>Add Game</h1>
+                                <div className="form-row">
+                                    <div className="form-group col-md-6 mb-0">
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            name="description"
+                                            value={addGame.description}
+                                            placeholder="Description"
+                                            onChange={(e) => {
+                                                setError({
+                                                    ...error,
+                                                    description: ''
+                                                })
+                                                handleChange(e)
+                                            }}
+                                        // style={{marginLeft:"20%"}}
+                                        />
+                                        {
+                                            error.description && <p>{error.description}</p>
                                         }
-                                    </select>
+                                    </div>
+                                    <div className="form-group col-md-6 mb-0">
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            name="name"
+                                            value={addGame.name}
+                                            placeholder="Name"
+                                            onChange={(e) => {
+                                                setError({
+                                                    ...error,
+                                                    name: ''
+                                                })
+                                                handleChange(e)
+                                            }}
+                                        // style={{marginLeft:"70%"}}
+                                        />
+                                        {
+                                            error.name && <p>{error.name}</p>
+                                        }
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="form-row">
-                                <div className="form-group col-md-6 mb-3">
-                                    <label for="inputImage">Image</label>
-                                    <input
-                                        type="file"
-                                        className="form-control"
-                                        id="Image"
-                                        onChange={(e) => {
-                                            setError({
-                                                ...error,
-                                                image: ''
-                                            })
-                                            handleImageChange(e)
-                                        }}
-                                    />
-
-                                    {
-                                        error.image && <p>{error.image}</p>
-                                    }
+                                <div className="form-row">
+                                    <div className="form-group col-md-6 mb-0">
+                                        <label for="inputPrice"></label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            name="price"
+                                            value={addGame.price}
+                                            placeholder="Price"
+                                            onChange={(e) => {
+                                                setError({
+                                                    ...error,
+                                                    price: ''
+                                                })
+                                                handleChange(e)
+                                            }}
+                                        />
+                                        {
+                                            error.price && <p>{error.price}</p>
+                                        }
+                                    </div>
+                                    <div className="form-group col-md-6">
+                                        <label for="inputCategory"></label>
+                                        <select name="category" id="inputCategory" className="form-control"
+                                            value={addGame.category}
+                                            onChange={(e) =>
+                                                handleChange(e)
+                                            }
+                                        // style={{marginLeft:"50%"}}
+                                        >
+                                            {categoryDropDown &&
+                                                categoryDropDown?.map((x) => (
+                                                    <option value={x.value}>{x.value}</option>
+                                                ))
+                                            }
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                             <p
-                                        className="button"
-                                        style={{ verticalAlign: "middle" , width:"22%" , backgroundColor:"rgb(33, 87, 124)"}}>
-                                        <span className="add-game-btn"
-                                            onClick={AddGame}>Add Game</span>
-                                    </p>
+                                <div className="form-row">
+                                    <div className="form-group col-md-6 mb-3">
+                                        <label for="inputImage">Image</label>
+                                        <input
+                                            type="file"
+                                            className="form-control"
+                                            id="Image"
+                                            onChange={(e) => {
+                                                setError({
+                                                    ...error,
+                                                    image: ''
+                                                })
+                                                handleImageChange(e)
+                                            }}
+                                        />
 
-                        </form>
+                                        {
+                                            error.image && <p>{error.image}</p>
+                                        }
+                                    </div>
+                                </div>
+                                <div className="add-game-btn mt-5">
+                                    <p1 className="button" style={{ verticalAlign: "middle" }}><span onClick={AddGame}>Add Game</span>
+
+                                    </p1>
+                                </div>
+                            </form>
+                        </div>
                     </div>
+
+                    <ToastContainer />
                 </div>
             </div>
-            <ToastContainer />
         </>
     )
 }
-
 
 export default AddGame;

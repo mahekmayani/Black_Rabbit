@@ -59,7 +59,7 @@
 }
 
 .form-row p{
-    background-Color: rgb(25, 102, 154);  
+    /* background-Color: rgb(25, 102, 154);   */
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: small;
@@ -71,5 +71,50 @@
     color: black;
   }
 
+  .registration-btn{
+    
+        display: inline-block;
+        border-radius: 4px;
+        background-Color: black;
+        border: 1px solid deeppink;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 18px;
+        padding: 6px;
+        width: 130px;
+        height: 40px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        border-radius: 15px;
+      }
+      
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -30px;
+    transition: 0.5s;
+  }
+  .sign-up-btn{
+    margin-left: 0px;
+  }
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
 
 

@@ -4,6 +4,8 @@ import { ToastContainer, toast } from "react-toastify";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { useNavigate } from "react-router-dom";
 import AddGame from "./AddGame";
+import '../Auth/Css/AddGameTable.css';
+import Footer from "./Footer";
 
 // toast.configure();
 
@@ -119,15 +121,17 @@ const AddGameTable = () => {
 
                                         }}
                                     >Add Game</p> */}
-
-                                    <p
-                                        className="button"
-                                        style={{ verticalAlign: "middle" , width:"100%",  backgroundColor:"rgb(33, 87, 124)"}}>
-                                        <span className="add-game-btn"
-                                            onClick={()=>{
+                                    <div className="add-game-tbl-btn">
+                                        <p
+                                            className="button"
+                                            style={{ verticalAlign: "middle"}}>
+                                            <span
+                                            onClick={() => {
                                                 navigator(`/addGame`)
-                                            }}>Add Game</span>
-                                    </p>
+                                            }}>
+                                                Add Game</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         ),

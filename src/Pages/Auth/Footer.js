@@ -5,7 +5,7 @@ import Image from '../Auth/images/masthead-1-removebg-preview.png';
 const Footer = () => {
     return(
         <>
-            <div class="footer-section">
+            {/* <div class="footer-section">
         <div class="container">
             <div class="footer-cta pt-5 pb-5">
                 <div class="row">
@@ -56,8 +56,8 @@ const Footer = () => {
                                 <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    </div> */}
+                    {/* <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                         <div class="footer-widget">
                             <div class="footer-widget-heading">
                                 <h3>Useful Links</h3>
@@ -88,16 +88,13 @@ const Footer = () => {
                                 </form>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </div> */}
         <div class="copyright-area">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 text-center text-lg-left">
                         <div class="copyright-text">
-                            <p>Copyright &copy; 2018, All Right Reserved <a href="https://codepen.io/anupkumar92/">Anup</a></p>
+                            <p>Copyright &copy; 2023, All Right Reserved <a href="https://codepen.io/anupkumar92/">Anup</a></p>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
@@ -114,7 +111,6 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-    </div>        
         </>
     )
 }

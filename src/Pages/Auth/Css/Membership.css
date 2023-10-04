@@ -271,8 +271,8 @@ a {
 }
 
 .pricingTable:hover {
-    transform: scale(1.05);
-    z-index: 1
+    transform: scale(1.05)!important;
+    z-index: 1 !important;
 }
 
 .pricingTable .pricingTable-header {
@@ -283,7 +283,7 @@ a {
 }
 
 .pricingTable:hover .pricingTable-header {
-    background: #ff9624
+    background: #ff9624!important;
 }
 
 .pricingTable .pricingTable-header i {
@@ -308,7 +308,7 @@ a {
 .pricingTable:hover .month,
 .pricingTable:hover .price-value,
 .pricingTable:hover .pricingTable-header i {
-    color: #fff
+    color: #fff!important
 }
 
 .pricingTable .heading {
@@ -341,7 +341,7 @@ a {
 }
 
 .pricingTable .pricingTable-BuyNow a:hover {
-    box-shadow: 0 0 10px #ffa442
+    box-shadow: 0 0 10px #ffa442 !important;
 }
 
 .pricingTable.blue .heading,
@@ -351,11 +351,11 @@ a {
 
 .pricingTable.blue .pricingTable-BuyNow a,
 .pricingTable.blue:hover .pricingTable-header {
-    background: #4b64ff
+    background: #4b64ff!important;
 }
 
 .pricingTable.blue .pricingTable-BuyNow a:hover {
-    box-shadow: 0 0 10px #4b64ff
+    box-shadow: 0 0 10px #4b64ff!important
 }
 
 .pricingTable.red .heading,
@@ -365,11 +365,11 @@ a {
 
 .pricingTable.red .pricingTable-BuyNow a,
 .pricingTable.red:hover .pricingTable-header {
-    background: #ff4b4b;
+    background: #ff4b4b!important;
 }
 
 .pricingTable.red .pricingTable-BuyNow a:hover {
-    box-shadow: 0 0 10px #ff4b4b
+    box-shadow: 0 0 10px #ff4b4b!important;
 }
 
 .pricingTable.green .heading,
@@ -379,17 +379,17 @@ a {
 
 .pricingTable.green .pricingTable-BuyNow a,
 .pricingTable.green:hover .pricingTable-header {
-    background: #40c952
+    background: #40c952!important
 }
 
 .pricingTable.green .pricingTable-BuyNow a:hover {
-    box-shadow: 0 0 10px #40c952
+    box-shadow: 0 0 10px #40c952!important
 }
 
 .pricingTable.blue:hover .price-value,
 .pricingTable.green:hover .price-value,
 .pricingTable.red:hover .price-value {
-    color: #fff
+    color: #fff!important
 }
 
 @media screen and (max-width:990px) {

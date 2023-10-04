@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faWhatsapp, faXmark } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import Footer from './Footer';
 
 
 
@@ -59,43 +60,43 @@ const ContactUs = () => {
         if (!contactForm.AddYourProject) {
             error.AddYourProject = "Please Add Your Project Required"
         }
-    
-    if (error.FirstName || error.LastName || error.Email || error.Mobile || error.AddYourProject) {
-        setError(error)
-        return;
-      }
 
-      const body = {
-        firstName: contactForm.FirstName,
-        lastName: contactForm.LastName,
-        phone: contactForm.Mobile,
-        email: contactForm.Email,
-        message: contactForm.AddYourProject,
-    }
-
-    axios.post("http://localhost:3000/api/v1/contactUs/create", body)
-      .then((res) => {
-        if (res.status === 201) {
-          setContactForm({
-            FirstName: '',
-            LastName: '',
-            Email: '',
-            Mobile: '',
-            AddYourProject: '',
-          })
+        if (error.FirstName || error.LastName || error.Email || error.Mobile || error.AddYourProject) {
+            setError(error)
+            return;
         }
 
-        toast("Added successfully")
-      }).catch((error) => {
-        console.log("error", error);
-        // if (error.response.data.message === "User already registered") {
-        //   toast.error(<p>{"User already registered"}</p>, {
-        //     position: "top-center",
-        //   });
-        // }
-      })
+        const body = {
+            firstName: contactForm.FirstName,
+            lastName: contactForm.LastName,
+            phone: contactForm.Mobile,
+            email: contactForm.Email,
+            message: contactForm.AddYourProject,
+        }
+
+        axios.post("http://localhost:3000/api/v1/contactUs/create", body)
+            .then((res) => {
+                if (res.status === 201) {
+                    setContactForm({
+                        FirstName: '',
+                        LastName: '',
+                        Email: '',
+                        Mobile: '',
+                        AddYourProject: '',
+                    })
+                }
+
+                toast("Added successfully")
+            }).catch((error) => {
+                console.log("error", error);
+                // if (error.response.data.message === "User already registered") {
+                //   toast.error(<p>{"User already registered"}</p>, {
+                //     position: "top-center",
+                //   });
+                // }
+            })
     }
- 
+
     return (
         <>
             <div className='container mx-auto'>
@@ -162,7 +163,7 @@ const ContactUs = () => {
                                                     }}
                                                 />
                                                 {
-                                                    error.Email && <p style={{color:"red"}}> {error.Email} </p>
+                                                    error.Email && <p style={{ color: "red" }}> {error.Email} </p>
                                                 }
                                             </div>
                                             <div className="form-group col-md-6">
@@ -205,10 +206,10 @@ const ContactUs = () => {
                                             </div>
                                         </div>
 
-                                        <p onClick={ContactUsSave} className='btn btn-primary'><b>SUBMIT</b></p>
-                                        <span
-                                            style={{ cursor: "pointer", color: "blue" }}>
-                                        </span>
+                                        <div className="contact-btn mt-5">
+                                            <p1 className="button" style={{ verticalAlign: "middle" }}><span onClick={ContactUsSave}>Submit</span>
+                                            </p1>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -223,7 +224,7 @@ const ContactUs = () => {
 
                                 <div className="form-row" >
                                     <div className="form-group mt-5">
-                                            <FontAwesomeIcon icon={faEnvelope} size="xl" />
+                                        <FontAwesomeIcon icon={faEnvelope} size="xl" />
                                         <div className='contact-form'>
                                             <input
                                                 type="email"
@@ -231,10 +232,10 @@ const ContactUs = () => {
                                                 placeholder='email'
                                                 value={"BlackRabbit@gmail.com"}
 
-                                                style={{ height: "40px", marginLeft: "7vh", width:"34vh"}}
+                                                style={{ height: "40px", marginLeft: "7vh", width: "34vh" }}
                                             />
                                             <div>
-                                        </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -246,7 +247,7 @@ const ContactUs = () => {
                                                     type="text"
                                                     name="Mobile"
                                                     placeholder='Mobile Number'
-                                                    
+
                                                     value={"+91 9099975424"}
                                                     style={{ height: "40px", marginLeft: "7vh", width: "34vh" }}
                                                 />
@@ -276,6 +277,7 @@ const ContactUs = () => {
                 </div>
             </div>
             <ToastContainer />
+
         </>
     );
 }

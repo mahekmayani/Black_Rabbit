@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import "./Css/Login.css";
+import "../Auth/Css/Registration.css";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import axios from "axios";
@@ -153,8 +153,7 @@ const Registration = () => {
       >
         {/* {isLogin ?  */}
         <form
-          className='border border-primary p-4 mr-4'
-          style={{ width: "25%" }}
+          className=' p-4 mr-4' style={{ width: '25%',  boxShadow: "0 2px 6px 0 hotpink , 0 2px 6px 0 hotpink"}}
         >
           <h4
             className='text-center box-shadow'
@@ -280,8 +279,10 @@ const Registration = () => {
           {/* <button className='button' style={{ verticalAlign: "middle" }}>
             <span className='sign-in-btn'>Sign Up</span>
           </button> */}
-            <p className="button" onClick={SignUp} style={{verticalAlign: "middle" }}><span className="sign-in-btn">Sign Up</span>
+          <div className="registration-btn">
+            <p className="button" style={{verticalAlign: "middle" }}><span className="SignUp-btn" onClick={SignUp}>Sign Up</span>
             </p>
+            </div>
           <p className='mt-3' style={{color: '#fff'}}>
             Don't have an account?{" "}
             <span

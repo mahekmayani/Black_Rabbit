@@ -3,6 +3,7 @@ import '../Auth/Css/Membership.css';
 import image from '../Auth/images/1111.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
+import Footer from './Footer';
 
 const data = [
   { id: 1, title: "Card 1", description: "Description 1" },
@@ -45,15 +46,15 @@ const Membership = () => {
                 </div>
               </div> */}
 
-              <div class="col-md-3 col-sm-6"  style={{width:"40vh"}}>
-                <div class="pricingTable green">
-                  <div class="pricingTable-header">
-                    <i class="fa fa-briefcase"></i>
+              <div className="col-md-3 col-sm-6"  style={{width:"40vh"}}>
+                <div className="pricingTable green">
+                  <div className="pricingTable-header">
+                    <i className="fa fa-briefcase"></i>
                     <h4>Noob</h4>
-                    <div class="price-value"> $00.00 <span class="month">per month</span> </div>
+                    <div className="price-value"> $00.00 <span className="month">per month</span> </div>
                   </div>
-                  <h3 class="heading">Free</h3>
-                  <div class="pricing-content"  style={{paddingTop:"5%"}}>
+                  <h3 className="heading">Free</h3>
+                  <div className="pricing-content"  style={{paddingTop:"5%"}}>
                     <ul>
                       <li><b><FontAwesomeIcon icon={faCheck} beatFade /></b> Book Slot For Game</li>
                       <div  style={{paddingTop:"10%"}}></div>
@@ -62,20 +63,20 @@ const Membership = () => {
                       <li><b><FontAwesomeIcon icon={faXmark} beatFade /></b> Book All Type Of Game</li>
                     </ul>
                   </div>
-                  <div class="pricingTable-BuyNow">
+                  <div className="pricingTable-BuyNow">
                     <a href="#">Buy Now</a>
                   </div>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6 ml-5" style={{width:"40vh"}}>
-                <div class="pricingTable blue">
-                  <div class="pricingTable-header">
-                    <i class="fa fa-diamond"></i>
+              <div className="col-md-3 col-sm-6 ml-5" style={{width:"40vh"}}>
+                <div className="pricingTable blue">
+                  <div className="pricingTable-header">
+                    <i className="fa fa-diamond"></i>
                     <h4>ABC</h4>
-                    <div class="price-value"> $199 <span class="month">per month</span> </div>
+                    <div className="price-value"> $199 <span className="month">per month</span> </div>
                   </div>
-                  <h3 class="heading">Premium</h3>
-                  <div class="pricing-content" style={{paddingTop:"5%"}}>
+                  <h3 className="heading">Premium</h3>
+                  <div className="pricing-content" style={{paddingTop:"5%"}}>
                     <ul>
                     <li><b><FontAwesomeIcon icon={faCheck} beatFade /></b> Book Slot For Game</li>
                     <div  style={{paddingTop:"10%"}}></div>
@@ -84,21 +85,21 @@ const Membership = () => {
                       <li><b><FontAwesomeIcon icon={faXmark} beatFade /></b> Book All Type Of Game</li>
                     </ul>
                   </div>
-                  <div class="pricingTable-BuyNow">
+                  <div className="pricingTable-BuyNow">
                     <a href="#">Buy Now</a>
                    
                   </div>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6 ml-5"  style={{width:"40vh"}}>
-                <div class="pricingTable red">
-                  <div class="pricingTable-header">
-                    <i class="fa fa-cube"></i>
+              <div className="col-md-3 col-sm-6 ml-5"  style={{width:"40vh"}}>
+                <div className="pricingTable red">
+                  <div className="pricingTable-header">
+                    <i className="fa fa-cube"></i>
                     <h4>Legend</h4>
-                    <div class="price-value"> $299 <span class="month">per month</span> </div>
+                    <div className="price-value"> $299 <span className="month">per month</span> </div>
                   </div>
-                  <h3 class="heading">Premium</h3>
-                  <div class="pricing-content" style={{paddingTop:"5%"}}> 
+                  <h3 className="heading">Premium</h3>
+                  <div className="pricing-content" style={{paddingTop:"5%"}}> 
                     <ul>
                     <li><b>60GB</b> Book Slot For Game</li>
                     <div  style={{paddingTop:"10%"}}></div>
@@ -107,7 +108,7 @@ const Membership = () => {
                       <li><b></b>   Book All Type Of Game</li>
                     </ul>
                   </div>
-                  <div class="pricingTable-BuyNow">
+                  <div className="pricingTable-BuyNow">
                     <a href="#">Buy Now</a>
                   </div>
                 </div>
@@ -116,6 +117,7 @@ const Membership = () => {
           </div>
         </div>
       </div>
+
       </>
       )
 }

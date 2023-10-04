@@ -101,7 +101,7 @@ const Login = () => {
     {/* {isLogin ?  */}
     <div className='background-image'>
         <div className='d-flex justify-content-end align-items-center' style={{ minHeight: "100vh" }}>
-          <form className='border border-primary p-4 mr-4' style={{ width: '25%'}}>
+          <form className=' p-4 mr-4' style={{ width: '25%',  boxShadow: "0 2px 6px 0 hotpink , 0 2px 6px 0 hotpink"}}>
             <h4 className='text-center mb-4 box-shadow' style={{textShadow: '2px 2px 5px silver', color:'#E238EC'}}>Login</h4>
             <div className='form-group custom-input' style={{width: '95%'}}>
               <label htmlFor='inputEmail4'>Email</label>
@@ -167,8 +167,10 @@ const Login = () => {
             {/* <button type='submit' className='button button2'>
               Sign In
             </button> */}
-          <p className="button" style={{verticalAlign: "middle" }}><span className="BuyNow-btn" onClick={SignIn}>Sign In</span>
+            <div className="login-btn">
+          <p className="button" style={{verticalAlign: "middle" }}><span className="SignIn-btn" onClick={SignIn}>Sign In</span>
             </p>
+            </div>
             <p className='mt-3' style={{color: "#FFF"}}>
               Don't have an account?{" "}
               <span
