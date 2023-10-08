@@ -25,7 +25,7 @@ const Profile = () => {
 			Authorization: `Bearer ${token}`,
 		};
 
-		axios.get('http://localhost:3000/api/v1/users/me' ,{ headers })
+		axios.get('http://localhost:3000/api/v1/users/me' , { headers: { "content-type": "multipart/form-data", "Authorization": `Bearer ${token}` } })
 			.then((res) => {
 				console.log("res.data", res.data);
 				setProfileData({

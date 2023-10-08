@@ -39,7 +39,7 @@ const AboutUs = () => {
             </div>
             <div className="About-card">
             {/* <img src={image2} /> */}
-                <h1 style={{ textAlign: "left" }}>Our People</h1>
+                {/* <h1 style={{ textAlign: "left" }}>Our People</h1> */}
                 <div className="d-flex p-3">
                     <p>
                         Our People

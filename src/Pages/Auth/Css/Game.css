@@ -1,25 +1,4 @@
-/* :root {
-    --color-one: #e6e6ff;
-    --color-two: #1a1aff;
-    --color-three: #b3b3ff;
-  } */
-  
-  /* body {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-   
-    font-size: 0.95em;
-    color: #222;
-  } */
-  
-  /* .container {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } */
+
   
   .card {
     border: 1px solid var(--color-three);
@@ -52,5 +31,5 @@
   }
   .card-img-top{
     height: 230px;
-    width: 100%acccccz;
+    width: 100%;
   }

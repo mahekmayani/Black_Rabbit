@@ -12,15 +12,16 @@ export default function Header() {
   const showSidebar = () => setSidebar(!sidebar);
   
   const getToken = localStorage.getItem("token");
-  const role = localStorage.getItem("role");
+  // const role = localStorage.getItem("role");
 
   const handleSideBarChange = (data) =>{
     if(data == "LogOut"){
       localStorage.removeItem("token")
       localStorage.removeItem("userName")
+      localStorage.removeItem("role")
     }
   }
-
+  const role = localStorage.getItem("role");
   return (
     <>
       <IconContext.Provider value={{ color: "#FFF" }}>
@@ -38,7 +39,7 @@ export default function Header() {
               </Link>
             </li>
 
-            {SidebarData.map((item, index) => {
+            {SidebarData?.filter((item)=> role !== "admin" ? (item?.title !== "AddGame" && item?.title !== "UserTable" && item?.title !== "ContactUsTable") : item) ?.map((item, index) => {
               return (
                 <li key={index} className={item.cName}
                   onClick={(e) => handleSideBarChange(item?.title)}

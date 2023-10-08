@@ -7,35 +7,38 @@ import "../Auth/Css/AddGameTable.css";
 
 // toast.configure();
 
-const AddGameTable = () => {
-    const [gameRecord, setGameRecord] = useState([]);
+const UserTable = () => {
+    const [userRecord, setUserRecord] = useState([]);
+    const token = localStorage.getItem("token")
 
-    const getGameRecord = () => {
-        axios.get("http://localhost:3000/api/v1/games/get").then((res) => {
-            setGameRecord(res.data);
+    const getUserRecord = () => {
+        axios.get("http://localhost:3000/api/v1/users/get",
+        { headers: { "Authorization": `Bearer ${token}` } }).then((res) => {
+            // console.log("helloo",res);
+            setUserRecord(res.data);
         });
     };
 
     useEffect(() => {
-        getGameRecord();
+        getUserRecord();
     }, []);
 
     const [openPopUp, setOpenPopUp] = useState(false);
     const [deleteRowId, setDeleteRowId] = useState();
 
     const navigator = useNavigate();
-    const indexedData = gameRecord.map((item, index) => ({
+    const indexedData = userRecord.map((item, index) => ({
         ...item,
         index: index + 1,
     }));
 
     const columns = [
         { field: "index", headerName: "Id", width: 90 },
-        { field: "description", headerName: "Description", width: 150 },
-        { field: "name", headerName: "Name", width: 150 },
-        { field: "price", headerName: "Price", width: 150 },
-        { field: "category", headerName: "Category", width: 150 },
-        { field: "image", headerName: "Image", width: 150 },
+        { field: "firstName", headerName: "FirstName", width: 150 },
+        { field: "lastName", headerName: "LastName", width: 150 },
+        { field: "email", headerName: "Email", width: 150 },
+        { field: "phone", headerName: "Mobile_No", width: 150 },
+    
         // action
         {
             field: "action",
@@ -107,11 +110,11 @@ const AddGameTable = () => {
 
     const deleteRecord = (id) => {
         axios
-            .delete(`http://localhost:3000/api/v1/games/delete/${id}`)
+            .delete(`http://localhost:3000/api/v1/users/delete/${id}`)
             .then((res) => {
                 // console.log("res.data",res.data);
                 toast.success("Deleted successfully");
-                getGameRecord();
+                getUserRecord();
             });
     };
 
@@ -132,28 +135,7 @@ const AddGameTable = () => {
                                 }}
                             >
                                 <GridToolbar />
-                                <div>
-                                    {/* <p
-                                        className="btn btn-primary edit-btn"
-                                        style={{ marginRight: '10px', cursor: 'pointer', padding: '10px 10px' }}
-                                        onClick={() => {
-
-                                            navigator(`/addGame`)
-
-                                        }}
-                                    >Add Game</p> */}
-                                    <div className='add-game-tbl-btn'>
-                                        <p className='button' style={{ verticalAlign: "middle" }}>
-                                            <span
-                                                onClick={() => {
-                                                    navigator(`/addGame`);
-                                                }}
-                                            >
-                                                Add Game
-                                            </span>
-                                        </p>
-                                    </div>
-                                </div>
+                                
                             </div>
                         ),
                     }}
@@ -168,8 +150,8 @@ const AddGameTable = () => {
             } */}
                 {openPopUp && (
                     <div>
-                        {/* hello
-                <button onClick={()=>deleteRecord(deleteRowId)}>Yes</button>
+                        hello
+                {/* <button onClick={()=>deleteRecord(deleteRowId)}>Yes</button>
                 <button onClick={()=>{setOpenPopUp(false)}}>No</button> */}
 
                         <div
@@ -234,4 +216,4 @@ const AddGameTable = () => {
     );
 };
 
-export default AddGameTable;
+export default UserTable;

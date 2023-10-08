@@ -38,7 +38,7 @@
 
   
   .navbar-toggle {
-    background-color: var(--navBg);
+    background-color: black;
     width: 100%;
     height: 80px;
     display: flex;
@@ -78,6 +78,7 @@
     top: 0;
     left: -100%;
     transition: 850ms;
+    background-color: black;
   }
 
   .menu-bars {
@@ -97,7 +98,5 @@
     padding: 0 16px;
     border-radius: 4px;
   }
-  .nav-text a {
-   /* margin-bottom: 100px; */
-  }
+ 
   

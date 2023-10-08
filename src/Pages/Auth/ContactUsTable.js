@@ -7,35 +7,36 @@ import "../Auth/Css/AddGameTable.css";
 
 // toast.configure();
 
-const AddGameTable = () => {
-    const [gameRecord, setGameRecord] = useState([]);
+const ContactUsTable = () => {
+    const [contactRecord, setContactRecord] = useState([]);
 
-    const getGameRecord = () => {
-        axios.get("http://localhost:3000/api/v1/games/get").then((res) => {
-            setGameRecord(res.data);
+    const getContactRecord = () => {
+        axios.get("http://localhost:3000/api/v1/contactUs/get").then((res) => {
+            // console.log("res",res);
+            setContactRecord(res.data);
         });
     };
 
     useEffect(() => {
-        getGameRecord();
+        getContactRecord();
     }, []);
 
     const [openPopUp, setOpenPopUp] = useState(false);
     const [deleteRowId, setDeleteRowId] = useState();
 
     const navigator = useNavigate();
-    const indexedData = gameRecord.map((item, index) => ({
+    const indexedData = contactRecord.map((item, index) => ({
         ...item,
         index: index + 1,
     }));
 
     const columns = [
         { field: "index", headerName: "Id", width: 90 },
-        { field: "description", headerName: "Description", width: 150 },
-        { field: "name", headerName: "Name", width: 150 },
-        { field: "price", headerName: "Price", width: 150 },
-        { field: "category", headerName: "Category", width: 150 },
-        { field: "image", headerName: "Image", width: 150 },
+        { field: "firstName", headerName: "FirstName", width: 150 },
+        { field: "lastName", headerName: "LastName", width: 150 },
+        { field: "email", headerName: "Email", width: 150 },
+        { field: "phone", headerName: "Mobile_No", width: 150 },
+        { field: "message", headerName: "Add Your Project", width: 150 },
         // action
         {
             field: "action",
@@ -54,7 +55,7 @@ const AddGameTable = () => {
                         </button> */}
                         {/* // edit icon  */}
 
-                        <svg
+                        {/* <svg
                             xmlns='http://www.w3.org/2000/svg'
                             fill='none'
                             viewBox='0 0 24 24'
@@ -73,7 +74,7 @@ const AddGameTable = () => {
                                 stroke-linejoin='round'
                                 d='M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125'
                             />
-                        </svg>
+                        </svg> */}
 
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
@@ -107,11 +108,11 @@ const AddGameTable = () => {
 
     const deleteRecord = (id) => {
         axios
-            .delete(`http://localhost:3000/api/v1/games/delete/${id}`)
+            .delete(`http://localhost:3000/api/v1/contactUs/delete/${id}`)
             .then((res) => {
                 // console.log("res.data",res.data);
                 toast.success("Deleted successfully");
-                getGameRecord();
+                getContactRecord();
             });
     };
 
@@ -142,17 +143,7 @@ const AddGameTable = () => {
 
                                         }}
                                     >Add Game</p> */}
-                                    <div className='add-game-tbl-btn'>
-                                        <p className='button' style={{ verticalAlign: "middle" }}>
-                                            <span
-                                                onClick={() => {
-                                                    navigator(`/addGame`);
-                                                }}
-                                            >
-                                                Add Game
-                                            </span>
-                                        </p>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         ),
@@ -234,4 +225,4 @@ const AddGameTable = () => {
     );
 };
 
-export default AddGameTable;
+export default ContactUsTable;

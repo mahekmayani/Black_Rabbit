@@ -79,6 +79,7 @@ const Login = () => {
 
           localStorage.setItem("token", res.data.token.access.token)
           localStorage.setItem("userName", res.data.user.firstName)
+          localStorage.setItem("role", res.data.user.role);
 
           navigate('/game')
         }

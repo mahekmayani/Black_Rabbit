@@ -14,6 +14,8 @@ import AddGameTable from './Pages/Auth/AddGameTable';
 import Footer from './Pages/Auth/Footer';
 import Game from './Pages/Auth/Game';
 import GameDetails from './Pages/Auth/GameDetails';
+import ContactUsTable from './Pages/Auth/ContactUsTable';
+import UserTable from './Pages/Auth/UserTable';
 
 function App() {
   const getPath = (window.location.pathname);
@@ -50,6 +52,8 @@ function App() {
         <Route path="/addgametable" element={<AddGameTable />} />
         {/* <Route path="/card" element={<Card />} /> */}
         <Route path="/gameDetails" element={<GameDetails />} />
+        <Route path="/contactUsTable" element={<ContactUsTable />} />
+        <Route path="/userTable" element={<UserTable />} />
         
       </Routes>
     </>
