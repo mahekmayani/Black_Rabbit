@@ -39,7 +39,7 @@ export default function Header() {
               </Link>
             </li>
 
-            {SidebarData?.filter((item)=> role !== "admin" ? (item?.title !== "AddGame" && item?.title !== "UserTable" && item?.title !== "ContactUsTable") : item) ?.map((item, index) => {
+            {SidebarData?.filter((item)=> role !== "admin" ? (item?.title !== "AddGame" && item?.title !== "UserTable" && item?.title !== "ContactUsTable"): item) ?.map((item, index) => {
               return (
                 <li key={index} className={item.cName}
                   onClick={(e) => handleSideBarChange(item?.title)}

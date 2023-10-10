@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Auth/Css/ContactUs.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faWhatsapp, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -73,11 +73,11 @@ const ContactUs = () => {
             email: contactForm.Email,
             message: contactForm.AddYourProject,
         }
-
+        
         axios.post("http://localhost:3000/api/v1/contactUs/create", body)
-            .then((res) => {
-                if (res.status === 201) {
-                    setContactForm({
+        .then((res) => {
+            if (res.status === 201) {
+                setContactForm({
                         FirstName: '',
                         LastName: '',
                         Email: '',
@@ -95,12 +95,58 @@ const ContactUs = () => {
                 //   });
                 // }
             })
+        }
+        const ContactUsCancel=()=>{
+            const body = {
+                firstName: contactForm.FirstName,
+                lastName: contactForm.LastName,
+                phone: contactForm.Mobile,
+                email: contactForm.Email,
+                message: contactForm.AddYourProject,
+            }
+            axios.post("http://localhost:3000/api/v1/contactUs/create", body)
+            
+        .then((res) => {
+            if (res.status === 201) {
+                setContactForm({
+                    FirstName: '',
+                    LastName: '',
+                    Email: '',
+                    Mobile: '',
+                    AddYourProject: '',
+                })
+            }
+
+        })
     }
+    useEffect(() => {
+        const handleContactUsSaveShortcut = (e) => {
+          if (e.key === "s" && e.altKey) {
+            e.preventDefault();
+            ContactUsSave();
+          }
+        };
+    
+        const handleContactUsCancelShortcut = (e) => {
+          if (e.key === "c" && e.altKey) {
+            e.preventDefault();
+            
+
+          }
+        };
+        document.addEventListener("keydown", handleContactUsSaveShortcut);
+        document.addEventListener("keydown", handleContactUsCancelShortcut);
+    
+        return () => {
+          document.removeEventListener("keydown", handleContactUsSaveShortcut);
+          document.removeEventListener("keydown", handleContactUsCancelShortcut);
+        };
+    }, []);
 
     return (
         <>
             <div className='container mx-auto'>
-                <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap' , marginLeft:"1%"}}>
                     <div className='containe mt-3'>
                         <div className='row justify-content-center mr-0'>
                             <div className='contact-form1'>
@@ -153,7 +199,7 @@ const ContactUs = () => {
                                                     name="Email"
                                                     value={contactForm.Email}
                                                     className='form-control'
-                                                    placeholder='email'
+                                                    placeholder='Email'
                                                     onChange={(e) => {
                                                         setError({
                                                             ...error,
@@ -206,8 +252,14 @@ const ContactUs = () => {
                                             </div>
                                         </div>
 
-                                        <div className="contact-btn mt-5">
+                                        <div className="contact-btn mt-5 ">
                                             <p1 className="button" style={{ verticalAlign: "middle" }}><span onClick={ContactUsSave}>Contact Me</span>
+                                            </p1>
+                                        </div>
+
+                                        <div className="contact-cancle-btn mt-5">
+                                            
+                                            <p1 className="button" style={{ verticalAlign: "middle"}}><span onClick={ContactUsCancel}>Cancel</span>
                                             </p1>
                                         </div>
                                     </div>
@@ -228,10 +280,10 @@ const ContactUs = () => {
                                             <input
                                                 type="email"
                                                 name="email"
-                                                placeholder='email'
+                                                placeholder='Email'
                                                 value={"BlackRabbit@gmail.com"}
 
-                                                style={{ height: "40px", width: "34vh" }}
+                                                style={{ height: "40px", width: "38vh" }}
                                             />
                                             <div>
                                             </div>
@@ -248,7 +300,7 @@ const ContactUs = () => {
                                                     placeholder='Mobile Number'
 
                                                     value={"+91 9099975424"}
-                                                    style={{ height: "40px", width: "34vh" }}
+                                                    style={{ height: "40px", width: "38vh" }}
                                                 />
                                             </div>
                                         </div>
@@ -263,7 +315,7 @@ const ContactUs = () => {
                                                     name="BlackRabbit"
                                                     placeholder='BlackRabbit'
                                                     value={"BlackRabbit"}
-                                                    style={{ height: "40px", width: "34vh" }}
+                                                    style={{ height: "40px", width: "38vh" }}
                                                 /><br></br><br></br>
                                             </div>
                                         </div>

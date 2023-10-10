@@ -27,12 +27,7 @@ export const SidebarData = [
     icon: <FontAwesomeIcon icon={faUpload} />,
     cName: "nav-text",
   },
-  {
-    title: "AddGame",
-    path: "/addGameTable",
-    icon: <FontAwesomeIcon icon={faUpload} />,
-    cName: "nav-text",
-  },
+  
   {
     title: "Membership",
     path: "/membership",

@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import '../Auth/Css/Navbar.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 
 function Navbar() {
@@ -15,7 +17,7 @@ function Navbar() {
   return (
     <>
       <div className='navbar-form'>
-        <p className="ml-auto" onClick={ProfileClick}>Profile</p>     
+        <p className="ml-auto" onClick={ProfileClick}>Profile</p>    
      </div>
     </>
   );

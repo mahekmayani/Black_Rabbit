@@ -13,10 +13,10 @@ const AboutUs = () => {
     return (
         <>
             <div>
-
-                <div className="About-section">
-                    <h1>About Us Page</h1>
-
+                <div className="container">
+                    <div className="About-section">
+                        <h1>About Us Page</h1>
+                    </div>
 
                 </div>
 
@@ -38,7 +38,7 @@ const AboutUs = () => {
                 </div>
             </div>
             <div className="About-card">
-            {/* <img src={image2} /> */}
+                {/* <img src={image2} /> */}
                 {/* <h1 style={{ textAlign: "left" }}>Our People</h1> */}
                 <div className="d-flex p-3">
                     <p>
@@ -53,46 +53,46 @@ const AboutUs = () => {
             </div>
 
             <div className="about mt-5" >
-                <h1 style={{ textAlign: "center"}}>Key Information</h1>
-                <div class="row mt-5"  style={{marginLeft:"16%"}}>
-                    <div class="col-md-3 mb-2" style={{borderBottom:"1px solid rgb(190, 190, 190)"}}>
+                <h1 style={{ textAlign: "center" }}>Key Information</h1>
+                <div class="row mt-5" style={{ marginLeft: "16%" }}>
+                    <div class="col-md-3 mb-2" style={{ borderBottom: "1px solid rgb(190, 190, 190)" }}>
                         <label>Founded</label>
                     </div>
-                    <div class="col-md-8 mb-2" style={{borderBottom:"1px solid  rgb(190, 190, 190)"}}>
+                    <div class="col-md-8 mb-2" style={{ borderBottom: "1px solid  rgb(190, 190, 190)" }}>
                         <p>1982</p>
                     </div>
                 </div>
 
-                <div class="row "  style={{marginLeft:"16%"}}>
-                    <div class="col-md-3 mb-2" style={{borderBottom:"1px solid  rgb(190, 190, 190)"}}>
+                <div class="row " style={{ marginLeft: "16%" }}>
+                    <div class="col-md-3 mb-2" style={{ borderBottom: "1px solid  rgb(190, 190, 190)" }}>
                         <label>Ownership</label>
                     </div>
-                    <div class="col-md-8 mb-2" style={{borderBottom:"1px solid  rgb(190, 190, 190)"}}>
+                    <div class="col-md-8 mb-2" style={{ borderBottom: "1px solid  rgb(190, 190, 190)" }}>
                         <p>Public</p>
                     </div>
                 </div>
-                <div class="row" style={{marginLeft:"16%"}}>
-                    <div class="col-md-3 mb-2" style={{borderBottom:"1px solid  rgb(190, 190, 190)"}}>
+                <div class="row" style={{ marginLeft: "16%" }}>
+                    <div class="col-md-3 mb-2" style={{ borderBottom: "1px solid  rgb(190, 190, 190)" }}>
                         <label>Global Headquarters	</label>
                     </div>
-                    <div class="col-md-8 mb-2" style={{borderBottom:"1px solid  rgb(190, 190, 190)"}}>
+                    <div class="col-md-8 mb-2" style={{ borderBottom: "1px solid  rgb(190, 190, 190)" }}>
                         <p>	Redwood City, California</p>
                     </div>
                 </div>
-                <div class="row"  style={{marginLeft:"16%"}}>
-                    <div class="col-md-3 mb-2" style={{borderBottom:"1px solid  rgb(190, 190, 190)"}}>
+                <div class="row" style={{ marginLeft: "16%" }}>
+                    <div class="col-md-3 mb-2" style={{ borderBottom: "1px solid  rgb(190, 190, 190)" }}>
                         <label>AddressAddress</label>
                     </div>
-                    <div class="col-md-8 mb-2" style={{borderBottom:"1px solid  rgb(190, 190, 190)"}}>
+                    <div class="col-md-8 mb-2" style={{ borderBottom: "1px solid  rgb(190, 190, 190)" }}>
 
                         <p>	Electronic Arts Inc. 209 Redwood Shores Parkway Redwood City, CA 94025</p>
                     </div>
                 </div>
-                <div class="row"  style={{marginLeft:"16%"}}>
-                    <div class="col-md-3 mb-2" style={{borderBottom:"1px solid  rgb(190, 190, 190)"}}>
+                <div class="row" style={{ marginLeft: "16%" }}>
+                    <div class="col-md-3 mb-2" style={{ borderBottom: "1px solid  rgb(190, 190, 190)" }}>
                         <label>Consumer Purchases</label>
                     </div>
-                    <div class="col-md-8 mb-2" style={{borderBottom:"1px solid  rgb(190, 190, 190)"}}>
+                    <div class="col-md-8 mb-2" style={{ borderBottom: "1px solid  rgb(190, 190, 190)" }}>
                         <p>	Residents in the United States, Canada or Japan contract with Electronic Arts Inc., 209 Redwood Shores Parkway, Redwood City, CA 94065, USA. Residents in any other country, then this Agreement is between you and EA Swiss Sàrl, Place du Molard 8, 1204, Geneva, Switzerland (CH-660-2328005-8).</p>
                     </div>
                 </div>

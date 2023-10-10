@@ -31,16 +31,16 @@ const Card = () => {
         <>
 
 
-            <div className="container">
-                <div className="form-group col-md-6">
+            <div className="container" style={{marginRight:"160px"}}>
+                <div className="form-group col-md-5">
                     <label for="inputCategory"></label>
-                    <select name="category" id="inputCategory" className="form-control"
+                    <select name="category" id="inputCategory" className="form-control" style={{marginLeft:"70%"}}
                         value={cardData.category}
                         onChange={(e) =>
                             getCardData(e.target.value)
                         }
-                        >
-                            <option value="">Select Category</option>
+                    >
+                        <option value="">Select Category</option>
                         {categoryDropDown &&
                             categoryDropDown?.map((x) => (
                                 <option value={x.value}>{x.value}</option>
@@ -48,11 +48,13 @@ const Card = () => {
                         }
                     </select>
                 </div>
-                <div className="row">
+                <div className="row mt-5">
                     {cardData && cardData?.map((item) => (
                         <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <div className="card shadow">
-                                <img src={`http://localhost:3000${item?.image}`} className="card-img-top" alt="..." onClick={() => navigate('/gameDetails')} />
+                                <img src={`http://localhost:3000${item?.image}`} className="card-img-top" alt="..." onClick={() =>
+                                    navigate(`/gameDetails`, { state: item })
+                                } />
                                 <div className="card-body">
                                     <div style={{ display: "flex" }}>
                                         <label>Name : </label>
@@ -63,9 +65,10 @@ const Card = () => {
                                         <h6 className="card-text">${item?.price}</h6>
                                     </div>
                                     <div style={{ display: "flex" }}>
-                                        <label>Description : </label>
-                                        <h6 className="card-text">{item?.description}</h6>
+                                        <label>Category : </label>
+                                        <h6 className="card-text"> {item?.category}</h6>
                                     </div>
+                                    
                                 </div>
                                 <div className="card-body card-p">
                                     <div className="row">

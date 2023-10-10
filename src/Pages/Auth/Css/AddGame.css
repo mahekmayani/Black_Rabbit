@@ -111,15 +111,11 @@ width:400px; */
     position: fixed;
     padding: 3%;
     margin: 1%;
-    top: 15%;
-    left: 25%;
-    width: 50%;
-    height: 70%;
     border: 2px solid #ffffff;
     box-shadow: 4px 5px rgb(0, 0, 0);
     background-color: white;
-        box-shadow: 0px 2px 6px 0 deeppink, 4px 5px  rgb(0, 0, 0);
-
+    box-shadow: 0px 2px 6px 0 deeppink, 4px 5px  rgb(0, 0, 0);
+    position: relative;
 }
 
 font {
@@ -142,21 +138,34 @@ form {
 } */
 
 .add-game-btn {
-    display: inline-block;
-    border-radius: 5%;
-    background-Color: black;
-    border: 1px solid deeppink;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 6px;
-    width: 25%;
-    /* height: 10%; */
-    transition: all 0.5s;
-    cursor: pointer;
-    margin-left: 37%;
-    border-radius: 15px;
-  }
+    width: 100%;
+    justify-content: center;
+}
 
+.add-game-btn .button span {
+    padding: 15px 30px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+}
+p1.button.cancel {
+    margin-inline-start: 20px;
+}
+.add-game-btn .button.cancel span {
+    background: transparent;
+    border: 1px solid #000;
+    color: #000;
+}
+.add-game-btn  .button span:after {
+    display: none;
+}
+
+.centered-img {
+    display: block;
+    margin: 0 auto; /* Center horizontally */
+    max-width: 100%;
+    max-height: 100%;
+  }
 /* .form-row{
     height: 12vh;
 

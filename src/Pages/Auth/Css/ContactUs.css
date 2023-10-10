@@ -25,6 +25,23 @@
     border-radius: 15px;
   }
 
+.contact-cancle-btn{
+    display: inline-block;
+    border-radius: 4px;
+    background-Color: black;
+    border: 1px solid deeppink;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 6px;
+    width: 150px;
+    height: 40px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 15px;
+  }
+
 .form-row p{
     color: red;
     margin-top: 0px;

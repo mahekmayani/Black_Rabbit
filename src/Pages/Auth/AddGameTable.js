@@ -12,6 +12,7 @@ const AddGameTable = () => {
 
     const getGameRecord = () => {
         axios.get("http://localhost:3000/api/v1/games/get").then((res) => {
+            // console.log("res",res);
             setGameRecord(res.data);
         });
     };
@@ -35,7 +36,16 @@ const AddGameTable = () => {
         { field: "name", headerName: "Name", width: 150 },
         { field: "price", headerName: "Price", width: 150 },
         { field: "category", headerName: "Category", width: 150 },
-        { field: "image", headerName: "Image", width: 150 },
+        {field: "image", headerName: "Image", width: 150, renderCell: (params) => {
+                    {gameRecord.map((item) => (
+                        // {gameRecord?.map((item) => (
+                        <div>
+
+                                <img src={`http://localhost:3000${item?.image}`} alt={item?.image} onClick={{ state: item }} />
+                        </div>
+                    ))}
+        }},
+        
         // action
         {
             field: "action",
@@ -61,7 +71,7 @@ const AddGameTable = () => {
                             stroke-width='1.5'
                             stroke='currentColor'
                             height='20px'
-                            width='20px'
+                            width='30px'
                             className='edit-icon'
                             onClick={() => {
                                 navigator(`/addGame`, { state: params.row });
@@ -105,6 +115,7 @@ const AddGameTable = () => {
         },
     ];
 
+
     const deleteRecord = (id) => {
         axios
             .delete(`http://localhost:3000/api/v1/games/delete/${id}`)
@@ -117,7 +128,7 @@ const AddGameTable = () => {
 
     return (
         <>
-            <div style={{ width: "81%", padding: "20px", marginLeft: "auto" }}>
+            <div style={{ width: "68%", padding: "20px", marginLeft: "15%" }}>
                 <DataGrid
                     rows={indexedData}
                     columns={columns}

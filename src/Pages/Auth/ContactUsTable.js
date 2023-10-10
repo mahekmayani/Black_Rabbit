@@ -83,7 +83,7 @@ const ContactUsTable = () => {
                             strokeWidth={1.5}
                             stroke='currentColor'
                             height='20px'
-                            width='20px'
+                            width='50px'
                             className='edit-icon'
                             data-toggle='modal'
                             data-target='#exampleModal'
@@ -118,7 +118,7 @@ const ContactUsTable = () => {
 
     return (
         <>
-            <div style={{ width: "81%", padding: "20px", marginLeft: "auto" }}>
+            <div style={{ width: "65%", padding: "20px", marginLeft: "15%" }}>
                 <DataGrid
                     rows={indexedData}
                     columns={columns}

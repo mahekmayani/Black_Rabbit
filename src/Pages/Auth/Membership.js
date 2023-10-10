@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../Auth/Css/Membership.css';
-import image from '../Auth/images/1111.png';
+import image from '../Auth/images/checked.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { Button, Modal } from "react-bootstrap";
+
 import Footer from './Footer';
 
 const data = [
@@ -10,10 +12,20 @@ const data = [
 
 ];
 const Membership = () => {
+  const [showModal, setShowModal] = useState(false);
+
+
+  const handlePreview = () => {
+    setShowModal(true);
+  };
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap' , marginLeft:"17.5%"}} >
+      <div style={{ display: 'flex', flexWrap: 'wrap', marginLeft: "17.5%" }} >
         <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet' />
         <link href='' rel='stylesheet' />
 
@@ -46,7 +58,7 @@ const Membership = () => {
                 </div>
               </div> */}
 
-              <div className="col-md-3 col-sm-6"  style={{width:"40vh"}}>
+              <div className="col-md-3 col-sm-6" style={{ width: "40vh" }}>
                 <div className="pricingTable green">
                   <div className="pricingTable-header">
                     <i className="fa fa-briefcase"></i>
@@ -54,21 +66,42 @@ const Membership = () => {
                     <div className="price-value"> $00.00 <span className="month">per month</span> </div>
                   </div>
                   <h3 className="heading">Free</h3>
-                  <div className="pricing-content"  style={{paddingTop:"5%"}}>
+                  <div className="pricing-content" style={{ paddingTop: "5%" }}>
                     <ul>
                       <li><b><FontAwesomeIcon icon={faCheck} beatFade /></b> Book Slot For Game</li>
-                      <div  style={{paddingTop:"10%"}}></div>
+                      <div style={{ paddingTop: "10%" }}></div>
                       <li><b><FontAwesomeIcon icon={faCheck} beatFade /></b> Apply For Our Game Card</li>
-                      <div  style={{paddingTop:"10%"}}></div>
+                      <div style={{ paddingTop: "10%" }}></div>
                       <li><b><FontAwesomeIcon icon={faXmark} beatFade /></b> Book All Type Of Game</li>
                     </ul>
                   </div>
                   <div className="pricingTable-BuyNow">
-                    <a href="#">Buy Now</a>
+                    <a className='btn' onClick={handlePreview}>Buy Now</a>
                   </div>
+                  <Modal show={showModal} onHide={handleCloseModal} centered>
+                    <Modal.Header>
+                      <Modal.Title>Buy Now</Modal.Title>
+                      <FontAwesomeIcon icon={faXmark} onClick={handleCloseModal} />
+                    </Modal.Header>
+                    <Modal.Body>
+                      <img src={image}
+                        alt='Preview'
+                        className='img-preview-modal centered-img'
+                        width={300}
+                        height={300}
+                      />
+                      <h1 style={{ textAlign: "center" }}>Successfully</h1>
+
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant='secondary' onClick={handleCloseModal}>
+                        Close
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
                 </div>
               </div>
-              <div className="col-md-3 col-sm-6 ml-5" style={{width:"40vh"}}>
+              <div className="col-md-3 col-sm-6 ml-5" style={{ width: "40vh" }}>
                 <div className="pricingTable blue">
                   <div className="pricingTable-header">
                     <i className="fa fa-diamond"></i>
@@ -76,22 +109,42 @@ const Membership = () => {
                     <div className="price-value"> $199 <span className="month">per month</span> </div>
                   </div>
                   <h3 className="heading">Premium</h3>
-                  <div className="pricing-content" style={{paddingTop:"5%"}}>
+                  <div className="pricing-content" style={{ paddingTop: "5%" }}>
                     <ul>
-                    <li><b><FontAwesomeIcon icon={faCheck} beatFade /></b> Book Slot For Game</li>
-                    <div  style={{paddingTop:"10%"}}></div>
+                      <li><b><FontAwesomeIcon icon={faCheck} beatFade /></b> Book Slot For Game</li>
+                      <div style={{ paddingTop: "10%" }}></div>
                       <li><b><FontAwesomeIcon icon={faCheck} beatFade /></b> Apply For Our Game Card</li>
-                      <div  style={{paddingTop:"10%"}}></div>
+                      <div style={{ paddingTop: "10%" }}></div>
                       <li><b><FontAwesomeIcon icon={faXmark} beatFade /></b> Book All Type Of Game</li>
                     </ul>
                   </div>
                   <div className="pricingTable-BuyNow">
-                    <a href="#">Buy Now</a>
-                   
+                    <a className='btn' onClick={handlePreview}>Buy Now</a>
                   </div>
+                  <Modal show={showModal} onHide={handleCloseModal} centered>
+                    <Modal.Header>
+                      <Modal.Title>Buy Now</Modal.Title>
+                      <FontAwesomeIcon icon={faXmark} onClick={handleCloseModal} />
+                    </Modal.Header>
+                    <Modal.Body>
+                      <img src={image}
+                        alt='Preview'
+                        className='img-preview-modal centered-img'
+                        width={300}
+                        height={300}
+                      />
+                      <h1 style={{ textAlign: "center" }}>Successfully</h1>
+
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant='secondary' onClick={handleCloseModal}>
+                        Close
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
                 </div>
               </div>
-              <div className="col-md-3 col-sm-6 ml-5"  style={{width:"40vh"}}>
+              <div className="col-md-3 col-sm-6 ml-5" style={{ width: "40vh" }}>
                 <div className="pricingTable red">
                   <div className="pricingTable-header">
                     <i className="fa fa-cube"></i>
@@ -99,18 +152,41 @@ const Membership = () => {
                     <div className="price-value"> $299 <span className="month">per month</span> </div>
                   </div>
                   <h3 className="heading">Premium</h3>
-                  <div className="pricing-content" style={{paddingTop:"5%"}}> 
+                  <div className="pricing-content" style={{ paddingTop: "5%" }}>
                     <ul>
-                    <li><b>60GB</b> Book Slot For Game</li>
-                    <div  style={{paddingTop:"10%"}}></div>
+                      <li><b>60GB</b> Book Slot For Game</li>
+                      <div style={{ paddingTop: "10%" }}></div>
                       <li><b></b> Apply For Our Game Card</li>
-                      <div  style={{paddingTop:"10%"}}></div>
+                      <div style={{ paddingTop: "10%" }}></div>
                       <li><b></b>   Book All Type Of Game</li>
                     </ul>
                   </div>
                   <div className="pricingTable-BuyNow">
-                    <a href="#">Buy Now</a>
+
+                    <a className='btn' onClick={handlePreview}>Buy Now</a>
+
                   </div>
+                  <Modal show={showModal} onHide={handleCloseModal} centered>
+                    <Modal.Header>
+                      <Modal.Title>Buy Now</Modal.Title>
+                      <FontAwesomeIcon icon={faXmark} onClick={handleCloseModal} />
+                    </Modal.Header>
+                    <Modal.Body>
+                      <img src={image}
+                        alt='Preview'
+                        className='img-preview-modal centered-img'
+                        width={300}
+                        height={300}
+                      />
+                      <h1 style={{ textAlign: "center" }}>Successfully</h1>
+
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant='secondary' onClick={handleCloseModal}>
+                        Close
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
                 </div>
               </div>
             </div>
@@ -118,10 +194,10 @@ const Membership = () => {
         </div>
       </div>
 
-      </>
-      )
+    </>
+  )
 }
 
-      export default Membership;
+export default Membership;
 
 
